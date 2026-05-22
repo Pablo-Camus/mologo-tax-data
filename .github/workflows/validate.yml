@@ -1,0 +1,34 @@
+name: Validate tax data
+
+on:
+  push:
+    paths: ['tax-data.json']
+  schedule:
+    - cron: '0 9 * * 1'   # Every Monday 9am — reminder to review
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON is valid
+        run: python3 -c "import json, sys; json.load(open('tax-data.json')); print('✅ tax-data.json is valid JSON')"
+
+      - name: Check all required fields present
+        run: |
+          python3 - <<'EOF'
+          import json, sys
+          data = json.load(open('tax-data.json'))
+          required = ['name','vn','vs','vr','wn','wr','wd']
+          errors = []
+          for code, entry in data.items():
+              for field in required:
+                  if field not in entry:
+                      errors.append(f"{code} missing field: {field}")
+          if errors:
+              for e in errors: print("❌", e)
+              sys.exit(1)
+          print(f"✅ All {len(data)} countries have required fields")
+          EOF
