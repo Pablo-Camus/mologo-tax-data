@@ -1,0 +1,983 @@
+{
+  "_meta": {
+    "version": "1.1.0",
+    "updated": "2025-06-06",
+    "note": "Income tax brackets and social security for self-employed/freelancers. confidence:high = verified source, confidence:low = needs agent verification."
+  },
+
+  "AT": {
+    "income_tax": {
+      "name": "Einkommensteuer",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.bmf.gv.at"
+    },
+    "ss": { "name": "Sozialversicherung (SVS)", "mode": "percent", "rate": 26.85, "source": "https://www.svs.at" }
+  },
+
+  "BE": {
+    "income_tax": {
+      "name": "IPP / Personenbelasting",
+      "year": 2024,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,     "to": 15820, "rate": 25 },
+        { "from": 15820, "to": 27230, "rate": 40 },
+        { "from": 27230, "to": 46440, "rate": 45 },
+        { "from": 46440, "to": null,  "rate": 50 }
+      ],
+      "source": "https://finances.belgium.be"
+    },
+    "ss": { "name": "Cotisations sociales", "mode": "percent", "rate": 20.5, "source": "https://www.inasti.be" }
+  },
+
+  "BG": {
+    "income_tax": {
+      "name": "Данък върху доходите",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0, "to": null, "rate": 10 }
+      ],
+      "source": "https://nap.bg"
+    },
+    "ss": { "name": "Осигуровки", "mode": "percent", "rate": 19.8, "source": "https://nap.bg" }
+  },
+
+  "CH": {
+    "income_tax": {
+      "name": "Einkommenssteuer",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "note": "Federal + cantonal rates vary significantly by canton",
+      "source": "https://www.estv.admin.ch"
+    },
+    "ss": { "name": "AHV/IV/EO", "mode": "percent", "rate": 10.6, "source": "https://www.ahv-iv.ch" }
+  },
+
+  "CY": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,     "to": 19500, "rate": 0  },
+        { "from": 19500, "to": 28000, "rate": 20 },
+        { "from": 28000, "to": 36300, "rate": 25 },
+        { "from": 36300, "to": 60000, "rate": 30 },
+        { "from": 60000, "to": null,  "rate": 35 }
+      ],
+      "source": "https://www.mof.gov.cy"
+    },
+    "ss": { "name": "Social Insurance", "mode": "percent", "rate": 16.6, "source": "https://www.mlsi.gov.cy" }
+  },
+
+  "CZ": {
+    "income_tax": {
+      "name": "Daň z příjmů",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,       "to": 1582812, "rate": 15 },
+        { "from": 1582812, "to": null,    "rate": 23 }
+      ],
+      "note": "Amounts in CZK",
+      "source": "https://www.financnisprava.cz"
+    },
+    "ss": { "name": "Sociální pojištění", "mode": "percent", "rate": 29.2, "source": "https://www.cssz.cz" }
+  },
+
+  "DE": {
+    "income_tax": {
+      "name": "Einkommensteuer",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,      "to": 12096,  "rate": 0  },
+        { "from": 12096,  "to": 68430,  "rate": 14 },
+        { "from": 68430,  "to": 277826, "rate": 42 },
+        { "from": 277826, "to": null,   "rate": 45 }
+      ],
+      "note": "Zones 2-3 use progressive formula; rates shown are entry rates. Solidarity surcharge (Soli) 5.5% applies above threshold.",
+      "source": "https://www.bundesfinanzministerium.de"
+    },
+    "ss": { "name": "Krankenversicherung", "mode": "percent", "rate": 14.6, "note": "KV only; pension/Rentenversicherung optional for Freiberufler", "source": "https://www.bundesgesundheitsministerium.de" }
+  },
+
+  "DK": {
+    "income_tax": {
+      "name": "Indkomstskat",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "note": "Includes municipal tax (~25%) + state tax (~15%). Combined ~42-57%.",
+      "source": "https://www.skat.dk"
+    },
+    "ss": { "name": "Arbejdsmarkedsbidrag (AM-bidrag)", "mode": "percent", "rate": 8, "source": "https://www.skat.dk" }
+  },
+
+  "EE": {
+    "income_tax": {
+      "name": "Tulumaks",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0, "to": null, "rate": 22 }
+      ],
+      "source": "https://www.emta.ee"
+    },
+    "ss": { "name": "Sotsiaalmaks", "mode": "percent", "rate": 33, "source": "https://www.emta.ee" }
+  },
+
+  "ES": {
+    "income_tax": {
+      "name": "IRPF",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,      "to": 12450,  "rate": 19 },
+        { "from": 12450,  "to": 20200,  "rate": 24 },
+        { "from": 20200,  "to": 35200,  "rate": 30 },
+        { "from": 35200,  "to": 60000,  "rate": 37 },
+        { "from": 60000,  "to": 300000, "rate": 45 },
+        { "from": 300000, "to": null,   "rate": 47 }
+      ],
+      "source": "https://www.agenciatributaria.es"
+    },
+    "ss": { "name": "Cuota autónomos", "mode": "fixed", "rate": null, "note": "User enters their own amount — varies by base de cotización elegida", "source": "https://www.seg-social.es" }
+  },
+
+  "FI": {
+    "income_tax": {
+      "name": "Tulovero",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "note": "State + municipal tax. Combined typically 25-58%.",
+      "source": "https://www.vero.fi"
+    },
+    "ss": { "name": "YEL (yrittäjän eläkevakuutus)", "mode": "percent", "rate": 24.1, "source": "https://www.etk.fi" }
+  },
+
+  "FR": {
+    "income_tax": {
+      "name": "Impôt sur le revenu",
+      "year": 2024,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,      "to": 11294,  "rate": 0  },
+        { "from": 11294,  "to": 28797,  "rate": 11 },
+        { "from": 28797,  "to": 82341,  "rate": 30 },
+        { "from": 82341,  "to": 177106, "rate": 41 },
+        { "from": 177106, "to": null,   "rate": 45 }
+      ],
+      "source": "https://www.impots.gouv.fr"
+    },
+    "ss": { "name": "Cotisations sociales", "mode": "percent", "rate": 22, "note": "Auto-entrepreneur BNC rate. Régime réel: ~45%.", "source": "https://www.urssaf.fr" }
+  },
+
+  "GB": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2026,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,      "to": 12570,  "rate": 0  },
+        { "from": 12570,  "to": 50270,  "rate": 20 },
+        { "from": 50270,  "to": 125140, "rate": 40 },
+        { "from": 125140, "to": null,   "rate": 45 }
+      ],
+      "note": "Personal allowance tapers to 0 for income over £100,000. Scotland has different rates.",
+      "source": "https://www.gov.uk/income-tax-rates"
+    },
+    "ss": { "name": "National Insurance (Class 4)", "mode": "percent", "rate": 9, "note": "9% on profits £12,570–£50,270; 2% above. Plus £3.45/week Class 2 (2024-25).", "source": "https://www.gov.uk/self-employed-national-insurance-rates" }
+  },
+
+  "GR": {
+    "income_tax": {
+      "name": "Φόρος εισοδήματος",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,     "to": 10000, "rate": 9  },
+        { "from": 10000, "to": 20000, "rate": 22 },
+        { "from": 20000, "to": 30000, "rate": 28 },
+        { "from": 30000, "to": 40000, "rate": 36 },
+        { "from": 40000, "to": null,  "rate": 44 }
+      ],
+      "source": "https://www.aade.gr"
+    },
+    "ss": { "name": "ΕΦΚΑ", "mode": "percent", "rate": 26.95, "source": "https://www.efka.gov.gr" }
+  },
+
+  "HR": {
+    "income_tax": {
+      "name": "Porez na dohodak",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.porezna-uprava.hr"
+    },
+    "ss": { "name": "Doprinosi", "mode": "percent", "rate": 16.5, "source": "https://www.porezna-uprava.hr" }
+  },
+
+  "HU": {
+    "income_tax": {
+      "name": "Személyi jövedelemadó",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0, "to": null, "rate": 15 }
+      ],
+      "source": "https://nav.gov.hu"
+    },
+    "ss": { "name": "Társadalombiztosítási járulék", "mode": "percent", "rate": 18.5, "source": "https://nav.gov.hu" }
+  },
+
+  "IE": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,     "to": 42000, "rate": 20 },
+        { "from": 42000, "to": null,  "rate": 40 }
+      ],
+      "note": "Standard rate band €42,000 for single persons (2025). USC and PRSI also apply.",
+      "source": "https://www.revenue.ie"
+    },
+    "ss": { "name": "PRSI (Class S)", "mode": "percent", "rate": 4, "source": "https://www.welfare.ie" }
+  },
+
+  "IT": {
+    "income_tax": {
+      "name": "IRPEF",
+      "year": 2024,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,     "to": 15000, "rate": 23 },
+        { "from": 15000, "to": 28000, "rate": 25 },
+        { "from": 28000, "to": 50000, "rate": 35 },
+        { "from": 50000, "to": null,  "rate": 43 }
+      ],
+      "note": "Regime forfettario: flat 15% (5% for new businesses first 5 years) for income < ~85,000€",
+      "source": "https://www.agenziaentrate.gov.it"
+    },
+    "ss": { "name": "Contributi INPS", "mode": "percent", "rate": 26.23, "note": "Gestione Separata rate for freelancers without other SS coverage", "source": "https://www.inps.it" }
+  },
+
+  "LT": {
+    "income_tax": {
+      "name": "Gyventojų pajamų mokestis",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,       "to": 101094, "rate": 15 },
+        { "from": 101094,  "to": null,   "rate": 20 }
+      ],
+      "note": "Amounts in EUR annual",
+      "source": "https://www.vmi.lt"
+    },
+    "ss": { "name": "Socialinio draudimo įmokos", "mode": "percent", "rate": 19.5, "source": "https://www.sodra.lt" }
+  },
+
+  "LU": {
+    "income_tax": {
+      "name": "Impôt sur le revenu",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://impotsdirects.public.lu"
+    },
+    "ss": { "name": "Cotisations sociales", "mode": "percent", "rate": 24, "source": "https://www.ccss.lu" }
+  },
+
+  "LV": {
+    "income_tax": {
+      "name": "Iedzīvotāju ienākuma nodoklis",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,     "to": 20004, "rate": 20 },
+        { "from": 20004, "to": 78100, "rate": 23 },
+        { "from": 78100, "to": null,  "rate": 31 }
+      ],
+      "source": "https://www.vid.gov.lv"
+    },
+    "ss": { "name": "Valsts sociālās apdrošināšanas obligātās iemaksas", "mode": "percent", "rate": 31.07, "source": "https://www.vsaa.gov.lv" }
+  },
+
+  "MT": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://cfr.gov.mt"
+    },
+    "ss": { "name": "Social Security", "mode": "percent", "rate": 10, "source": "https://socialsecurity.gov.mt" }
+  },
+
+  "NL": {
+    "income_tax": {
+      "name": "Inkomstenbelasting",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,     "to": 75518, "rate": 36.97 },
+        { "from": 75518, "to": null,  "rate": 49.5  }
+      ],
+      "note": "Box 1 rates include national insurance contributions (AOW etc). ZZP can use zelfstandigenaftrek deduction.",
+      "source": "https://www.belastingdienst.nl"
+    },
+    "ss": null
+  },
+
+  "NO": {
+    "income_tax": {
+      "name": "Inntektsskatt",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "note": "Municipal ~22% + bracket tax 1.7-17.6% + trygdeavgift",
+      "source": "https://www.skatteetaten.no"
+    },
+    "ss": { "name": "Trygdeavgift", "mode": "percent", "rate": 7.7, "source": "https://www.skatteetaten.no" }
+  },
+
+  "PL": {
+    "income_tax": {
+      "name": "Podatek dochodowy",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,      "to": 120000, "rate": 12 },
+        { "from": 120000, "to": null,   "rate": 32 }
+      ],
+      "note": "First 30,000 PLN tax-free (kwota wolna od podatku)",
+      "source": "https://www.podatki.gov.pl"
+    },
+    "ss": { "name": "ZUS", "mode": "fixed", "rate": null, "note": "Fixed monthly contributions ~1800 PLN (2025). Mały ZUS available for small earners.", "source": "https://www.zus.pl" }
+  },
+
+  "PT": {
+    "income_tax": {
+      "name": "IRS",
+      "year": 2024,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,     "to": 7703,  "rate": 13.25 },
+        { "from": 7703,  "to": 11623, "rate": 18    },
+        { "from": 11623, "to": 16472, "rate": 23    },
+        { "from": 16472, "to": 21321, "rate": 26    },
+        { "from": 21321, "to": 27146, "rate": 32.75 },
+        { "from": 27146, "to": 39791, "rate": 37    },
+        { "from": 39791, "to": 51997, "rate": 43.5  },
+        { "from": 51997, "to": 81199, "rate": 45    },
+        { "from": 81199, "to": null,  "rate": 48    }
+      ],
+      "source": "https://www.portaldasfinancas.gov.pt"
+    },
+    "ss": { "name": "Segurança Social", "mode": "percent", "rate": 21.4, "source": "https://www.seg-social.pt" }
+  },
+
+  "RO": {
+    "income_tax": {
+      "name": "Impozit pe venit",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0, "to": null, "rate": 10 }
+      ],
+      "source": "https://www.anaf.ro"
+    },
+    "ss": { "name": "CAS / CASS", "mode": "percent", "rate": 25, "source": "https://www.anaf.ro" }
+  },
+
+  "RU": {
+    "income_tax": {
+      "name": "НДФЛ",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.nalog.gov.ru"
+    },
+    "ss": null
+  },
+
+  "SE": {
+    "income_tax": {
+      "name": "Inkomstskatt",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,      "to": 598500, "rate": 32 },
+        { "from": 598500, "to": null,   "rate": 52 }
+      ],
+      "note": "Municipal tax ~32% (average, varies 29-35%). State tax ~20% above ~598,500 SEK.",
+      "source": "https://www.skatteverket.se"
+    },
+    "ss": { "name": "Egenavgifter", "mode": "percent", "rate": 28.97, "note": "For persons under 65", "source": "https://www.skatteverket.se" }
+  },
+
+  "SI": {
+    "income_tax": {
+      "name": "Dohodnina",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.fu.gov.si"
+    },
+    "ss": { "name": "Prispevki za socialno varnost", "mode": "percent", "rate": 38.2, "source": "https://www.fu.gov.si" }
+  },
+
+  "SK": {
+    "income_tax": {
+      "name": "Daň z príjmov",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,       "to": 47537.98, "rate": 19 },
+        { "from": 47537.98,"to": null,     "rate": 25 }
+      ],
+      "source": "https://www.financnasprava.sk"
+    },
+    "ss": { "name": "Sociálne poistenie", "mode": "percent", "rate": 33.15, "source": "https://www.socpoist.sk" }
+  },
+
+  "TR": {
+    "income_tax": {
+      "name": "Gelir Vergisi",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.gib.gov.tr"
+    },
+    "ss": { "name": "SGK", "mode": "percent", "rate": 20, "source": "https://www.sgk.gov.tr" }
+  },
+
+  "UA": {
+    "income_tax": {
+      "name": "Податок на доходи фізичних осіб",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://tax.gov.ua"
+    },
+    "ss": null
+  },
+
+  "AR": {
+    "income_tax": {
+      "name": "Ganancias",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "note": "High inflation makes brackets change frequently",
+      "source": "https://www.afip.gob.ar"
+    },
+    "ss": { "name": "Monotributo / Autónomos", "mode": "fixed", "rate": null, "note": "Category-based fixed monthly payment", "source": "https://www.afip.gob.ar" }
+  },
+
+  "BR": {
+    "income_tax": {
+      "name": "IRPF",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,       "to": 24511.92, "rate": 0    },
+        { "from": 24511.92,"to": 33919.80, "rate": 7.5  },
+        { "from": 33919.80,"to": 45012.60, "rate": 15   },
+        { "from": 45012.60,"to": 55976.16, "rate": 22.5 },
+        { "from": 55976.16,"to": null,     "rate": 27.5 }
+      ],
+      "note": "Amounts in BRL annual",
+      "source": "https://www.gov.br/receitafederal"
+    },
+    "ss": { "name": "INSS (MEI/Autônomo)", "mode": "percent", "rate": 11, "source": "https://www.gov.br/previdencia" }
+  },
+
+  "CA": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,      "to": 57375,  "rate": 15   },
+        { "from": 57375,  "to": 114750, "rate": 20.5 },
+        { "from": 114750, "to": 158519, "rate": 26   },
+        { "from": 158519, "to": 220000, "rate": 29   },
+        { "from": 220000, "to": null,   "rate": 33   }
+      ],
+      "note": "Federal only. Provincial tax adds ~6-25% depending on province.",
+      "source": "https://www.canada.ca/en/revenue-agency.html"
+    },
+    "ss": { "name": "CPP contributions", "mode": "percent", "rate": 11.9, "note": "Self-employed pay both employee+employer share of CPP", "source": "https://www.canada.ca/en/revenue-agency.html" }
+  },
+
+  "CL": {
+    "income_tax": {
+      "name": "Impuesto a la Renta",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.sii.cl"
+    },
+    "ss": { "name": "AFP / Salud", "mode": "percent", "rate": 17, "source": "https://www.spensiones.cl" }
+  },
+
+  "CO": {
+    "income_tax": {
+      "name": "Impuesto sobre la Renta",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.dian.gov.co"
+    },
+    "ss": { "name": "Cotizaciones sociales", "mode": "percent", "rate": 28, "source": "https://www.ugpp.gov.co" }
+  },
+
+  "MX": {
+    "income_tax": {
+      "name": "ISR",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,        "to": 8952.49,   "rate": 1.92  },
+        { "from": 8952.49,  "to": 75984.55,  "rate": 6.4   },
+        { "from": 75984.55, "to": 133536.07, "rate": 10.88 },
+        { "from": 133536.07,"to": 155229.80, "rate": 16    },
+        { "from": 155229.80,"to": 185852.57, "rate": 17.92 },
+        { "from": 185852.57,"to": 374837.88, "rate": 21.36 },
+        { "from": 374837.88,"to": 590795.99, "rate": 23.52 },
+        { "from": 590795.99,"to": 1127926.84,"rate": 30    },
+        { "from": 1127926.84,"to":1503902.46,"rate": 32    },
+        { "from": 1503902.46,"to":4511707.37,"rate": 34    },
+        { "from": 4511707.37,"to": null,     "rate": 35    }
+      ],
+      "note": "Amounts in MXN annual",
+      "source": "https://www.sat.gob.mx"
+    },
+    "ss": { "name": "IMSS / ISSSTE", "mode": "percent", "rate": 10.7, "note": "Approximate for self-employed", "source": "https://www.imss.gob.mx" }
+  },
+
+  "PE": {
+    "income_tax": {
+      "name": "Impuesto a la Renta",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.sunat.gob.pe"
+    },
+    "ss": { "name": "ONP / AFP", "mode": "percent", "rate": 13, "source": "https://www.sbs.gob.pe" }
+  },
+
+  "US": {
+    "income_tax": {
+      "name": "Federal Income Tax",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,       "to": 11925,  "rate": 10 },
+        { "from": 11925,   "to": 48475,  "rate": 12 },
+        { "from": 48475,   "to": 103350, "rate": 22 },
+        { "from": 103350,  "to": 197300, "rate": 24 },
+        { "from": 197300,  "to": 250525, "rate": 32 },
+        { "from": 250525,  "to": 626350, "rate": 35 },
+        { "from": 626350,  "to": null,   "rate": 37 }
+      ],
+      "note": "Federal only (single filers). State income tax varies 0-13.3%.",
+      "source": "https://www.irs.gov"
+    },
+    "ss": { "name": "Self-employment tax", "mode": "percent", "rate": 15.3, "note": "12.4% SS + 2.9% Medicare. Half deductible from income.", "source": "https://www.irs.gov" }
+  },
+
+  "UY": {
+    "income_tax": {
+      "name": "IRPF",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.dgi.gub.uy"
+    },
+    "ss": { "name": "BPS", "mode": "percent", "rate": 18.125, "source": "https://www.bps.gub.uy" }
+  },
+
+  "AU": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,      "to": 18200,  "rate": 0    },
+        { "from": 18200,  "to": 45000,  "rate": 19   },
+        { "from": 45000,  "to": 135000, "rate": 32.5 },
+        { "from": 135000, "to": 190000, "rate": 37   },
+        { "from": 190000, "to": null,   "rate": 45   }
+      ],
+      "source": "https://www.ato.gov.au"
+    },
+    "ss": { "name": "Medicare levy", "mode": "percent", "rate": 2, "source": "https://www.ato.gov.au" }
+  },
+
+  "CN": {
+    "income_tax": {
+      "name": "个人所得税",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,      "to": 36000,  "rate": 3  },
+        { "from": 36000,  "to": 144000, "rate": 10 },
+        { "from": 144000, "to": 300000, "rate": 20 },
+        { "from": 300000, "to": 420000, "rate": 25 },
+        { "from": 420000, "to": 660000, "rate": 30 },
+        { "from": 660000, "to": 960000, "rate": 35 },
+        { "from": 960000, "to": null,   "rate": 45 }
+      ],
+      "note": "Amounts in CNY annual. Standard deduction 60,000 CNY applies.",
+      "source": "https://www.chinatax.gov.cn"
+    },
+    "ss": { "name": "社会保险", "mode": "percent", "rate": 8, "note": "Individual contribution portion only", "source": "https://www.nhsa.gov.cn" }
+  },
+
+  "HK": {
+    "income_tax": {
+      "name": "Salaries Tax",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,     "to": 50000,  "rate": 2  },
+        { "from": 50000, "to": 100000, "rate": 6  },
+        { "from": 100000,"to": 150000, "rate": 10 },
+        { "from": 150000,"to": 200000, "rate": 14 },
+        { "from": 200000,"to": null,   "rate": 17 }
+      ],
+      "note": "Standard rate capped at 15%. Amounts in HKD.",
+      "source": "https://www.ird.gov.hk"
+    },
+    "ss": null
+  },
+
+  "ID": {
+    "income_tax": {
+      "name": "PPh Orang Pribadi",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.pajak.go.id"
+    },
+    "ss": { "name": "BPJS Ketenagakerjaan", "mode": "percent", "rate": 2, "source": "https://www.bpjsketenagakerjaan.go.id" }
+  },
+
+  "IN": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,      "to": 300000,  "rate": 0  },
+        { "from": 300000, "to": 700000,  "rate": 5  },
+        { "from": 700000, "to": 1000000, "rate": 10 },
+        { "from": 1000000,"to": 1200000, "rate": 15 },
+        { "from": 1200000,"to": 1500000, "rate": 20 },
+        { "from": 1500000,"to": null,    "rate": 30 }
+      ],
+      "note": "New tax regime (2025). Amounts in INR. Rebate u/s 87A for income ≤ 700,000 INR.",
+      "source": "https://www.incometax.gov.in"
+    },
+    "ss": null
+  },
+
+  "JP": {
+    "income_tax": {
+      "name": "所得税",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,       "to": 1950000,  "rate": 5  },
+        { "from": 1950000, "to": 3300000,  "rate": 10 },
+        { "from": 3300000, "to": 6950000,  "rate": 20 },
+        { "from": 6950000, "to": 9000000,  "rate": 23 },
+        { "from": 9000000, "to": 18000000, "rate": 33 },
+        { "from": 18000000,"to": 40000000, "rate": 40 },
+        { "from": 40000000,"to": null,     "rate": 45 }
+      ],
+      "note": "Amounts in JPY. Reconstruction surtax 2.1% applies. Resident tax (~10%) also applies.",
+      "source": "https://www.nta.go.jp"
+    },
+    "ss": { "name": "国民健康保険 / 国民年金", "mode": "percent", "rate": 15, "note": "Approximate: NHI (~9%) + National Pension (~16,590 JPY/month fixed)", "source": "https://www.nenkin.go.jp" }
+  },
+
+  "KR": {
+    "income_tax": {
+      "name": "소득세",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,        "to": 14000000,  "rate": 6  },
+        { "from": 14000000, "to": 50000000,  "rate": 15 },
+        { "from": 50000000, "to": 88000000,  "rate": 24 },
+        { "from": 88000000, "to": 150000000, "rate": 35 },
+        { "from": 150000000,"to": 300000000, "rate": 38 },
+        { "from": 300000000,"to": 500000000, "rate": 40 },
+        { "from": 500000000,"to": 1000000000,"rate": 42 },
+        { "from": 1000000000,"to": null,     "rate": 45 }
+      ],
+      "note": "Amounts in KRW. Local income tax (10% of income tax) also applies.",
+      "source": "https://www.nts.go.kr"
+    },
+    "ss": { "name": "국민건강보험 / 국민연금", "mode": "percent", "rate": 14.4, "note": "National Health (~7.09%) + National Pension (~9%) — self-employed pay full amount", "source": "https://www.nhis.or.kr" }
+  },
+
+  "MY": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.hasil.gov.my"
+    },
+    "ss": { "name": "EPF / SOCSO", "mode": "percent", "rate": 11, "source": "https://www.kwsp.gov.my" }
+  },
+
+  "NZ": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,     "to": 14000,  "rate": 10.5 },
+        { "from": 14000, "to": 48000,  "rate": 17.5 },
+        { "from": 48000, "to": 70000,  "rate": 30   },
+        { "from": 70000, "to": 180000, "rate": 33   },
+        { "from": 180000,"to": null,   "rate": 39   }
+      ],
+      "note": "Amounts in NZD.",
+      "source": "https://www.ird.govt.nz"
+    },
+    "ss": null
+  },
+
+  "PH": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,       "to": 250000,  "rate": 0  },
+        { "from": 250000,  "to": 400000,  "rate": 20 },
+        { "from": 400000,  "to": 800000,  "rate": 25 },
+        { "from": 800000,  "to": 2000000, "rate": 30 },
+        { "from": 2000000, "to": 8000000, "rate": 32 },
+        { "from": 8000000, "to": null,    "rate": 35 }
+      ],
+      "note": "Amounts in PHP.",
+      "source": "https://www.bir.gov.ph"
+    },
+    "ss": { "name": "SSS / PhilHealth", "mode": "percent", "rate": 13, "source": "https://www.sss.gov.ph" }
+  },
+
+  "SG": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,      "to": 20000,  "rate": 0    },
+        { "from": 20000,  "to": 30000,  "rate": 2    },
+        { "from": 30000,  "to": 40000,  "rate": 3.5  },
+        { "from": 40000,  "to": 80000,  "rate": 7    },
+        { "from": 80000,  "to": 120000, "rate": 11.5 },
+        { "from": 120000, "to": 160000, "rate": 15   },
+        { "from": 160000, "to": 200000, "rate": 18   },
+        { "from": 200000, "to": 240000, "rate": 19   },
+        { "from": 240000, "to": 280000, "rate": 19.5 },
+        { "from": 280000, "to": 320000, "rate": 20   },
+        { "from": 320000, "to": 500000, "rate": 22   },
+        { "from": 500000, "to": 1000000,"rate": 23   },
+        { "from": 1000000,"to": null,   "rate": 24   }
+      ],
+      "note": "Amounts in SGD.",
+      "source": "https://www.iras.gov.sg"
+    },
+    "ss": null
+  },
+
+  "TH": {
+    "income_tax": {
+      "name": "ภาษีเงินได้บุคคลธรรมดา",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.rd.go.th"
+    },
+    "ss": { "name": "ประกันสังคม", "mode": "percent", "rate": 5, "source": "https://www.sso.go.th" }
+  },
+
+  "TW": {
+    "income_tax": {
+      "name": "綜合所得稅",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,       "to": 560000,  "rate": 5  },
+        { "from": 560000,  "to": 1260000, "rate": 12 },
+        { "from": 1260000, "to": 2520000, "rate": 20 },
+        { "from": 2520000, "to": 4720000, "rate": 30 },
+        { "from": 4720000, "to": null,    "rate": 40 }
+      ],
+      "note": "Amounts in TWD.",
+      "source": "https://www.etax.nat.gov.tw"
+    },
+    "ss": { "name": "勞工保險 / 健保", "mode": "percent", "rate": 5.17, "source": "https://www.nhi.gov.tw" }
+  },
+
+  "VN": {
+    "income_tax": {
+      "name": "Thuế thu nhập cá nhân",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.gdt.gov.vn"
+    },
+    "ss": { "name": "Bảo hiểm xã hội", "mode": "percent", "rate": 8, "source": "https://baohiemxahoi.gov.vn" }
+  },
+
+  "AE": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0, "to": null, "rate": 0 }
+      ],
+      "note": "No personal income tax in UAE"
+    },
+    "ss": null
+  },
+
+  "EG": {
+    "income_tax": {
+      "name": "ضريبة الدخل",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.eta.gov.eg"
+    },
+    "ss": { "name": "التأمينات الاجتماعية", "mode": "percent", "rate": 11, "source": "https://www.nsi.gov.eg" }
+  },
+
+  "GH": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.gra.gov.gh"
+    },
+    "ss": { "name": "SSNIT", "mode": "percent", "rate": 5.5, "source": "https://www.ssnit.org.gh" }
+  },
+
+  "IL": {
+    "income_tax": {
+      "name": "מס הכנסה",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.gov.il/he/departments/irs"
+    },
+    "ss": { "name": "ביטוח לאומי", "mode": "percent", "rate": 12, "source": "https://www.btl.gov.il" }
+  },
+
+  "KE": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.kra.go.ke"
+    },
+    "ss": { "name": "NSSF", "mode": "fixed", "rate": null, "source": "https://www.nssf.or.ke" }
+  },
+
+  "MA": {
+    "income_tax": {
+      "name": "Impôt sur le Revenu",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.tax.gov.ma"
+    },
+    "ss": { "name": "CNSS", "mode": "percent", "rate": 6.4, "source": "https://www.cnss.ma" }
+  },
+
+  "NG": {
+    "income_tax": {
+      "name": "Personal Income Tax",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.firs.gov.ng"
+    },
+    "ss": { "name": "Pension (NPS)", "mode": "percent", "rate": 8, "source": "https://www.pencom.gov.ng" }
+  },
+
+  "QA": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0, "to": null, "rate": 0 }
+      ],
+      "note": "No personal income tax in Qatar"
+    },
+    "ss": null
+  },
+
+  "SA": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0, "to": null, "rate": 0 }
+      ],
+      "note": "No personal income tax for individuals in Saudi Arabia"
+    },
+    "ss": { "name": "GOSI", "mode": "percent", "rate": 10, "source": "https://www.gosi.gov.sa" }
+  },
+
+  "TZ": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.tra.go.tz"
+    },
+    "ss": { "name": "NSSF", "mode": "percent", "rate": 10, "source": "https://www.nssf.or.tz" }
+  },
+
+  "ZA": {
+    "income_tax": {
+      "name": "Income Tax",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,       "to": 237100,  "rate": 18   },
+        { "from": 237100,  "to": 370500,  "rate": 26   },
+        { "from": 370500,  "to": 512800,  "rate": 31   },
+        { "from": 512800,  "to": 673000,  "rate": 36   },
+        { "from": 673000,  "to": 857900,  "rate": 39   },
+        { "from": 857900,  "to": 1817000, "rate": 41   },
+        { "from": 1817000, "to": null,    "rate": 45   }
+      ],
+      "note": "Amounts in ZAR. Primary rebate R17,235 applies (2025/26).",
+      "source": "https://www.sars.gov.za"
+    },
+    "ss": null
+  }
+}
