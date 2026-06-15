@@ -3,76 +3,234 @@
     "name": "Austria",
     "vn": "MwSt.",
     "vs": 20,
-    "vr": [{ "l": "Ermäßigt", "r": 10 }, { "l": "Sondersatz", "r": 13 }],
+    "vr": [
+      {
+        "l": "Ermäßigt",
+        "r": 10
+      },
+      {
+        "l": "Sondersatz",
+        "r": 13
+      }
+    ],
     "wn": "Quellensteuer",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0,
     "period": "quarterly",
     "vatDoc": "UVA",
-    "vatDue": [{ "m": 4, "d": 15, "q": "Q1" }, { "m": 7, "d": 15, "q": "Q2" }, { "m": 10, "d": 15, "q": "Q3" }, { "m": 1, "d": 15, "q": "Q4" }],
-    "annualDue": { "m": 5, "d": 30 }
+    "vatDue": [
+      {
+        "m": 4,
+        "d": 15,
+        "q": "Q1"
+      },
+      {
+        "m": 7,
+        "d": 15,
+        "q": "Q2"
+      },
+      {
+        "m": 10,
+        "d": 15,
+        "q": "Q3"
+      },
+      {
+        "m": 1,
+        "d": 15,
+        "q": "Q4"
+      }
+    ],
+    "annualDue": {
+      "m": 5,
+      "d": 30
+    }
   },
   "BE": {
     "name": "Belgium",
     "vn": "TVA/BTW",
     "vs": 21,
-    "vr": [{ "l": "Réduit", "r": 12 }, { "l": "Super-réduit", "r": 6 }],
+    "vr": [
+      {
+        "l": "Réduit",
+        "r": 12
+      },
+      {
+        "l": "Super-réduit",
+        "r": 6
+      }
+    ],
     "wn": "Précompte",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0,
     "period": "quarterly",
     "vatDoc": "TVA/BTW",
-    "vatDue": [{ "m": 3, "d": 20, "q": "Q1" }, { "m": 6, "d": 20, "q": "Q2" }, { "m": 9, "d": 20, "q": "Q3" }, { "m": 0, "d": 20, "q": "Q4" }],
-    "annualDue": { "m": 6, "d": 15 }
+    "vatDue": [
+      {
+        "m": 3,
+        "d": 20,
+        "q": "Q1"
+      },
+      {
+        "m": 6,
+        "d": 20,
+        "q": "Q2"
+      },
+      {
+        "m": 9,
+        "d": 20,
+        "q": "Q3"
+      },
+      {
+        "m": 0,
+        "d": 20,
+        "q": "Q4"
+      }
+    ],
+    "annualDue": {
+      "m": 6,
+      "d": 15
+    }
   },
   "BG": {
     "name": "Bulgaria",
     "vn": "DDS",
     "vs": 20,
-    "vr": [{ "l": "Намалена", "r": 9 }],
+    "vr": [
+      {
+        "l": "Намалена",
+        "r": 9
+      }
+    ],
     "wn": "Withholding",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "CH": {
     "name": "Switzerland",
     "vn": "MWST",
     "vs": 8.1,
-    "vr": [{ "l": "Sondersatz Hotel", "r": 3.8 }, { "l": "Sondersatz II", "r": 2.6 }],
+    "vr": [
+      {
+        "l": "Sondersatz Hotel",
+        "r": 3.8
+      },
+      {
+        "l": "Sondersatz II",
+        "r": 2.6
+      }
+    ],
     "wn": "Quellensteuer",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "CY": {
     "name": "Cyprus",
     "vn": "VAT",
     "vs": 19,
-    "vr": [{ "l": "Reduced", "r": 9 }, { "l": "Super reduced", "r": 5 }],
+    "vr": [
+      {
+        "l": "Reduced",
+        "r": 9
+      },
+      {
+        "l": "Super reduced",
+        "r": 5
+      }
+    ],
     "wn": "Withholding",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "CZ": {
     "name": "Czech Republic",
     "vn": "DPH",
     "vs": 21,
-    "vr": [{ "l": "Snížená", "r": 12 }],
+    "vr": [
+      {
+        "l": "Snížená",
+        "r": 12
+      }
+    ],
     "wn": "Srážková daň",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "DE": {
     "name": "Germany",
     "vn": "MwSt.",
     "vs": 19,
-    "vr": [{ "l": "Ermäßigt", "r": 7 }],
+    "vr": [
+      {
+        "l": "Ermäßigt",
+        "r": 7
+      }
+    ],
     "wn": "Quellensteuer",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0,
     "period": "quarterly",
     "vatDoc": "Umsatzsteuervoranmeldung",
-    "vatDue": [{ "m": 3, "d": 10, "q": "Q1" }, { "m": 6, "d": 10, "q": "Q2" }, { "m": 9, "d": 10, "q": "Q3" }, { "m": 0, "d": 10, "q": "Q4" }],
-    "annualDue": { "m": 6, "d": 31 }
+    "vatDue": [
+      {
+        "m": 3,
+        "d": 10,
+        "q": "Q1"
+      },
+      {
+        "m": 6,
+        "d": 10,
+        "q": "Q2"
+      },
+      {
+        "m": 9,
+        "d": 10,
+        "q": "Q3"
+      },
+      {
+        "m": 0,
+        "d": 10,
+        "q": "Q4"
+      }
+    ],
+    "annualDue": {
+      "m": 6,
+      "d": 31
+    }
   },
   "DK": {
     "name": "Denmark",
@@ -80,253 +238,723 @@
     "vs": 25,
     "vr": [],
     "wn": "Kildeskat",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "EE": {
     "name": "Estonia",
     "vn": "KM",
     "vs": 24,
-    "vr": [{ "l": "Vähendatud (majutus)", "r": 13 }, { "l": "Vähendatud", "r": 9 }],
+    "vr": [
+      {
+        "l": "Vähendatud (majutus)",
+        "r": 13
+      },
+      {
+        "l": "Vähendatud",
+        "r": 9
+      }
+    ],
     "wn": "Kinnipeetav maks",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "ES": {
     "name": "Spain",
     "vn": "IVA",
     "vs": 21,
-    "vr": [{ "l": "Reducido", "r": 10 }, { "l": "Superreducido", "r": 4 }],
+    "vr": [
+      {
+        "l": "Reducido",
+        "r": 10
+      },
+      {
+        "l": "Superreducido",
+        "r": 4
+      }
+    ],
     "wn": "IRPF",
     "wr": [
-      { "l": "7% — Nuevos profesionales", "r": 7 },
-      { "l": "15% — Estándar", "r": 15 },
-      { "l": "19% — General", "r": 19 }
+      {
+        "l": "7% — Nuevos profesionales",
+        "r": 7
+      },
+      {
+        "l": "15% — Estándar",
+        "r": 15
+      },
+      {
+        "l": "19% — General",
+        "r": 19
+      }
     ],
     "wd": 15,
     "period": "quarterly",
     "vatDoc": "Modelo 303",
-    "vatDue": [{ "m": 3, "d": 20, "q": "Q1" }, { "m": 6, "d": 20, "q": "Q2" }, { "m": 9, "d": 20, "q": "Q3" }, { "m": 0, "d": 30, "q": "Q4" }],
-    "annualDue": { "m": 5, "d": 30 }
+    "vatDue": [
+      {
+        "m": 3,
+        "d": 20,
+        "q": "Q1"
+      },
+      {
+        "m": 6,
+        "d": 20,
+        "q": "Q2"
+      },
+      {
+        "m": 9,
+        "d": 20,
+        "q": "Q3"
+      },
+      {
+        "m": 0,
+        "d": 30,
+        "q": "Q4"
+      }
+    ],
+    "annualDue": {
+      "m": 5,
+      "d": 30
+    }
   },
   "FI": {
     "name": "Finland",
     "vn": "ALV",
     "vs": 25.5,
-    "vr": [{ "l": "Alennettu", "r": 13.5 }, { "l": "Alennettu II", "r": 10 }],
+    "vr": [
+      {
+        "l": "Alennettu",
+        "r": 13.5
+      },
+      {
+        "l": "Alennettu II",
+        "r": 10
+      }
+    ],
     "wn": "Ennakonpidätys",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "FR": {
     "name": "France",
     "vn": "TVA",
     "vs": 20,
-    "vr": [{ "l": "Réduit", "r": 10 }, { "l": "Super-réduit", "r": 5.5 }],
+    "vr": [
+      {
+        "l": "Réduit",
+        "r": 10
+      },
+      {
+        "l": "Super-réduit",
+        "r": 5.5
+      }
+    ],
     "wn": "Retenue à la source",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0,
     "period": "yearly",
-    "annualDue": { "m": 4, "d": 20 }
+    "annualDue": {
+      "m": 4,
+      "d": 20
+    }
   },
   "GB": {
     "name": "United Kingdom",
     "vn": "VAT",
     "vs": 20,
-    "vr": [{ "l": "Reduced", "r": 5 }],
+    "vr": [
+      {
+        "l": "Reduced",
+        "r": 5
+      }
+    ],
     "wn": "Withholding Tax",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0,
     "period": "quarterly",
-    "annualDue": { "m": 0, "d": 31 }
+    "annualDue": {
+      "m": 0,
+      "d": 31
+    }
   },
   "GR": {
     "name": "Greece",
     "vn": "ΦΠΑ",
     "vs": 24,
-    "vr": [{ "l": "Μειωμένος", "r": 13 }, { "l": "Υπερμειωμένος", "r": 6 }],
+    "vr": [
+      {
+        "l": "Μειωμένος",
+        "r": 13
+      },
+      {
+        "l": "Υπερμειωμένος",
+        "r": 6
+      }
+    ],
     "wn": "Παρακρατούμενος",
-    "wr": [{ "l": "20%", "r": 20 }],
+    "wr": [
+      {
+        "l": "20%",
+        "r": 20
+      }
+    ],
     "wd": 20
   },
   "HR": {
     "name": "Croatia",
     "vn": "PDV",
     "vs": 25,
-    "vr": [{ "l": "Snižena", "r": 13 }, { "l": "Snižena II", "r": 5 }],
+    "vr": [
+      {
+        "l": "Snižena",
+        "r": 13
+      },
+      {
+        "l": "Snižena II",
+        "r": 5
+      }
+    ],
     "wn": "Porez po odbitku",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "HU": {
     "name": "Hungary",
     "vn": "ÁFA",
     "vs": 27,
-    "vr": [{ "l": "Kedvezményes", "r": 18 }, { "l": "Csökkentett", "r": 5 }],
+    "vr": [
+      {
+        "l": "Kedvezményes",
+        "r": 18
+      },
+      {
+        "l": "Csökkentett",
+        "r": 5
+      }
+    ],
     "wn": "Forrásadó",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "IE": {
     "name": "Ireland",
     "vn": "VAT",
     "vs": 23,
-    "vr": [{ "l": "Reduced", "r": 13.5 }, { "l": "Second reduced", "r": 9 }],
+    "vr": [
+      {
+        "l": "Reduced",
+        "r": 13.5
+      },
+      {
+        "l": "Second reduced",
+        "r": 9
+      }
+    ],
     "wn": "Withholding Tax",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0,
     "period": "quarterly",
     "vatDoc": "VAT3",
-    "vatDue": [{ "m": 3, "d": 19, "q": "Q1" }, { "m": 6, "d": 19, "q": "Q2" }, { "m": 9, "d": 19, "q": "Q3" }, { "m": 0, "d": 19, "q": "Q4" }],
-    "annualDue": { "m": 9, "d": 31 }
+    "vatDue": [
+      {
+        "m": 3,
+        "d": 19,
+        "q": "Q1"
+      },
+      {
+        "m": 6,
+        "d": 19,
+        "q": "Q2"
+      },
+      {
+        "m": 9,
+        "d": 19,
+        "q": "Q3"
+      },
+      {
+        "m": 0,
+        "d": 19,
+        "q": "Q4"
+      }
+    ],
+    "annualDue": {
+      "m": 9,
+      "d": 31
+    }
   },
   "IT": {
     "name": "Italy",
     "vn": "IVA",
     "vs": 22,
-    "vr": [{ "l": "Ridotta", "r": 10 }, { "l": "Ridotta II", "r": 5 }, { "l": "Super ridotta", "r": 4 }],
+    "vr": [
+      {
+        "l": "Ridotta",
+        "r": 10
+      },
+      {
+        "l": "Ridotta II",
+        "r": 5
+      },
+      {
+        "l": "Super ridotta",
+        "r": 4
+      }
+    ],
     "wn": "Ritenuta d'acconto",
-    "wr": [{ "l": "20%", "r": 20 }],
+    "wr": [
+      {
+        "l": "20%",
+        "r": 20
+      }
+    ],
     "wd": 20,
     "period": "quarterly",
     "vatDoc": "Liquidazione IVA",
-    "vatDue": [{ "m": 3, "d": 30, "q": "Q1" }, { "m": 6, "d": 31, "q": "Q2" }, { "m": 9, "d": 31, "q": "Q3" }, { "m": 1, "d": 28, "q": "Q4" }],
-    "annualDue": { "m": 9, "d": 15 }
+    "vatDue": [
+      {
+        "m": 3,
+        "d": 30,
+        "q": "Q1"
+      },
+      {
+        "m": 6,
+        "d": 31,
+        "q": "Q2"
+      },
+      {
+        "m": 9,
+        "d": 31,
+        "q": "Q3"
+      },
+      {
+        "m": 1,
+        "d": 28,
+        "q": "Q4"
+      }
+    ],
+    "annualDue": {
+      "m": 9,
+      "d": 15
+    }
   },
   "LT": {
     "name": "Lithuania",
     "vn": "PVM",
     "vs": 21,
-    "vr": [{ "l": "Sumažinta", "r": 12 }, { "l": "Sumažinta II", "r": 5 }],
+    "vr": [
+      {
+        "l": "Sumažinta",
+        "r": 12
+      },
+      {
+        "l": "Sumažinta II",
+        "r": 5
+      }
+    ],
     "wn": "Mokestis prie šaltinio",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "LU": {
     "name": "Luxembourg",
     "vn": "TVA",
     "vs": 17,
-    "vr": [{ "l": "Intermédiaire", "r": 14 }, { "l": "Réduit", "r": 8 }, { "l": "Super-réduit", "r": 3 }],
+    "vr": [
+      {
+        "l": "Intermédiaire",
+        "r": 14
+      },
+      {
+        "l": "Réduit",
+        "r": 8
+      },
+      {
+        "l": "Super-réduit",
+        "r": 3
+      }
+    ],
     "wn": "Retenue à la source",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "LV": {
     "name": "Latvia",
     "vn": "PVN",
     "vs": 21,
-    "vr": [{ "l": "Samazinātā", "r": 12 }, { "l": "Samazinātā II", "r": 5 }],
+    "vr": [
+      {
+        "l": "Samazinātā",
+        "r": 12
+      },
+      {
+        "l": "Samazinātā II",
+        "r": 5
+      }
+    ],
     "wn": "Ieturējuma nodoklis",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "MT": {
     "name": "Malta",
     "vn": "VAT",
     "vs": 18,
-    "vr": [{ "l": "Reduced", "r": 7 }, { "l": "Reduced II", "r": 5 }],
+    "vr": [
+      {
+        "l": "Reduced",
+        "r": 7
+      },
+      {
+        "l": "Reduced II",
+        "r": 5
+      }
+    ],
     "wn": "Withholding Tax",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "NL": {
     "name": "Netherlands",
     "vn": "BTW",
     "vs": 21,
-    "vr": [{ "l": "Verlaagd", "r": 9 }],
+    "vr": [
+      {
+        "l": "Verlaagd",
+        "r": 9
+      }
+    ],
     "wn": "Withholding",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0,
     "period": "quarterly",
     "vatDoc": "BTW aangifte",
-    "vatDue": [{ "m": 3, "d": 30, "q": "Q1" }, { "m": 6, "d": 31, "q": "Q2" }, { "m": 9, "d": 31, "q": "Q3" }, { "m": 0, "d": 31, "q": "Q4" }],
-    "annualDue": { "m": 4, "d": 1 }
+    "vatDue": [
+      {
+        "m": 3,
+        "d": 30,
+        "q": "Q1"
+      },
+      {
+        "m": 6,
+        "d": 31,
+        "q": "Q2"
+      },
+      {
+        "m": 9,
+        "d": 31,
+        "q": "Q3"
+      },
+      {
+        "m": 0,
+        "d": 31,
+        "q": "Q4"
+      }
+    ],
+    "annualDue": {
+      "m": 4,
+      "d": 1
+    }
   },
   "NO": {
     "name": "Norway",
     "vn": "MVA",
     "vs": 25,
-    "vr": [{ "l": "Redusert", "r": 15 }, { "l": "Lav sats", "r": 12 }],
+    "vr": [
+      {
+        "l": "Redusert",
+        "r": 15
+      },
+      {
+        "l": "Lav sats",
+        "r": 12
+      }
+    ],
     "wn": "Kildeskatt",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "PL": {
     "name": "Poland",
     "vn": "VAT",
     "vs": 23,
-    "vr": [{ "l": "Obniżona", "r": 8 }, { "l": "Najniższa", "r": 5 }],
+    "vr": [
+      {
+        "l": "Obniżona",
+        "r": 8
+      },
+      {
+        "l": "Najniższa",
+        "r": 5
+      }
+    ],
     "wn": "Podatek u źródła",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "PT": {
     "name": "Portugal",
     "vn": "IVA",
     "vs": 23,
-    "vr": [{ "l": "Intermédio", "r": 13 }, { "l": "Reduzido", "r": 6 }],
+    "vr": [
+      {
+        "l": "Intermédio",
+        "r": 13
+      },
+      {
+        "l": "Reduzido",
+        "r": 6
+      }
+    ],
     "wn": "IRS Retenção",
-    "wr": [{ "l": "11.5%", "r": 11.5 }, { "l": "25%", "r": 25 }],
+    "wr": [
+      {
+        "l": "11.5%",
+        "r": 11.5
+      },
+      {
+        "l": "25%",
+        "r": 25
+      }
+    ],
     "wd": 11.5,
     "period": "quarterly",
     "vatDoc": "IVA Trimestral",
-    "vatDue": [{ "m": 4, "d": 15, "q": "Q1" }, { "m": 7, "d": 15, "q": "Q2" }, { "m": 10, "d": 15, "q": "Q3" }, { "m": 1, "d": 15, "q": "Q4" }],
-    "annualDue": { "m": 3, "d": 30 }
+    "vatDue": [
+      {
+        "m": 4,
+        "d": 15,
+        "q": "Q1"
+      },
+      {
+        "m": 7,
+        "d": 15,
+        "q": "Q2"
+      },
+      {
+        "m": 10,
+        "d": 15,
+        "q": "Q3"
+      },
+      {
+        "m": 1,
+        "d": 15,
+        "q": "Q4"
+      }
+    ],
+    "annualDue": {
+      "m": 3,
+      "d": 30
+    }
   },
   "RO": {
     "name": "Romania",
     "vn": "TVA",
     "vs": 21,
-    "vr": [{ "l": "Redusă", "r": 11 }],
+    "vr": [
+      {
+        "l": "Redusă",
+        "r": 11
+      }
+    ],
     "wn": "Impozit reținut",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "SE": {
     "name": "Sweden",
     "vn": "Moms",
     "vs": 25,
-    "vr": [{ "l": "Reducerad", "r": 12 }, { "l": "Lägre", "r": 6 }],
+    "vr": [
+      {
+        "l": "Reducerad",
+        "r": 12
+      },
+      {
+        "l": "Lägre",
+        "r": 6
+      }
+    ],
     "wn": "Källskatt",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0,
     "period": "yearly",
-    "annualDue": { "m": 4, "d": 2 }
+    "annualDue": {
+      "m": 4,
+      "d": 2
+    }
   },
   "SI": {
     "name": "Slovenia",
     "vn": "DDV",
     "vs": 22,
-    "vr": [{ "l": "Znižana", "r": 9.5 }, { "l": "Znižana II", "r": 5 }],
+    "vr": [
+      {
+        "l": "Znižana",
+        "r": 9.5
+      },
+      {
+        "l": "Znižana II",
+        "r": 5
+      }
+    ],
     "wn": "Davčni odtegljaj",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "SK": {
     "name": "Slovakia",
     "vn": "DPH",
     "vs": 23,
-    "vr": [{ "l": "Znížená", "r": 19 }, { "l": "Super znížená", "r": 5 }],
+    "vr": [
+      {
+        "l": "Znížená",
+        "r": 19
+      },
+      {
+        "l": "Super znížená",
+        "r": 5
+      }
+    ],
     "wn": "Zrážková daň",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "TR": {
     "name": "Turkey",
     "vn": "KDV",
     "vs": 20,
-    "vr": [{ "l": "İndirimli", "r": 10 }, { "l": "Çok indirimli", "r": 1 }],
+    "vr": [
+      {
+        "l": "İndirimli",
+        "r": 10
+      },
+      {
+        "l": "Çok indirimli",
+        "r": 1
+      }
+    ],
     "wn": "Stopaj",
-    "wr": [{ "l": "20%", "r": 20 }],
+    "wr": [
+      {
+        "l": "20%",
+        "r": 20
+      }
+    ],
     "wd": 20
   },
   "AR": {
     "name": "Argentina",
     "vn": "IVA",
     "vs": 21,
-    "vr": [{ "l": "Reducido", "r": 10.5 }],
+    "vr": [
+      {
+        "l": "Reducido",
+        "r": 10.5
+      }
+    ],
     "wn": "Retención",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0
   },
   "BR": {
@@ -335,21 +963,64 @@
     "vs": 15,
     "vr": [],
     "wn": "IRRF",
-    "wr": [{ "l": "1.5%", "r": 1.5 }, { "l": "5%", "r": 5 }],
+    "wr": [
+      {
+        "l": "1.5%",
+        "r": 1.5
+      },
+      {
+        "l": "5%",
+        "r": 5
+      }
+    ],
     "wd": 1.5
   },
   "CA": {
     "name": "Canada",
     "vn": "GST/HST",
     "vs": 5,
-    "vr": [{ "l": "HST (combined)", "r": 15 }],
+    "vr": [
+      {
+        "l": "HST (combined)",
+        "r": 15
+      }
+    ],
     "wn": "Withholding",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0,
     "period": "quarterly",
     "vatDoc": "GST/HST",
-    "vatDue": [{ "m": 3, "d": 30, "q": "Q1" }, { "m": 6, "d": 31, "q": "Q2" }, { "m": 9, "d": 31, "q": "Q3" }, { "m": 0, "d": 31, "q": "Q4" }],
-    "annualDue": { "m": 3, "d": 30 }
+    "vatDue": [
+      {
+        "m": 3,
+        "d": 30,
+        "q": "Q1"
+      },
+      {
+        "m": 6,
+        "d": 31,
+        "q": "Q2"
+      },
+      {
+        "m": 9,
+        "d": 31,
+        "q": "Q3"
+      },
+      {
+        "m": 0,
+        "d": 31,
+        "q": "Q4"
+      }
+    ],
+    "annualDue": {
+      "m": 3,
+      "d": 30
+    }
   },
   "CO": {
     "name": "Colombia",
@@ -357,21 +1028,64 @@
     "vs": 19,
     "vr": [],
     "wn": "Retención en la fuente",
-    "wr": [{ "l": "3.5%", "r": 3.5 }, { "l": "11%", "r": 11 }],
+    "wr": [
+      {
+        "l": "3.5%",
+        "r": 3.5
+      },
+      {
+        "l": "11%",
+        "r": 11
+      }
+    ],
     "wd": 3.5
   },
   "MX": {
     "name": "Mexico",
     "vn": "IVA",
     "vs": 16,
-    "vr": [{ "l": "Fronterizo", "r": 8 }],
+    "vr": [
+      {
+        "l": "Fronterizo",
+        "r": 8
+      }
+    ],
     "wn": "ISR Retención",
-    "wr": [{ "l": "10%", "r": 10 }],
+    "wr": [
+      {
+        "l": "10%",
+        "r": 10
+      }
+    ],
     "wd": 10,
     "period": "quarterly",
     "vatDoc": "DIOT",
-    "vatDue": [{ "m": 3, "d": 17, "q": "Q1" }, { "m": 6, "d": 17, "q": "Q2" }, { "m": 9, "d": 17, "q": "Q3" }, { "m": 0, "d": 17, "q": "Q4" }],
-    "annualDue": { "m": 3, "d": 30 }
+    "vatDue": [
+      {
+        "m": 3,
+        "d": 17,
+        "q": "Q1"
+      },
+      {
+        "m": 6,
+        "d": 17,
+        "q": "Q2"
+      },
+      {
+        "m": 9,
+        "d": 17,
+        "q": "Q3"
+      },
+      {
+        "m": 0,
+        "d": 17,
+        "q": "Q4"
+      }
+    ],
+    "annualDue": {
+      "m": 3,
+      "d": 30
+    }
   },
   "US": {
     "name": "United States",
@@ -379,12 +1093,41 @@
     "vs": 0,
     "vr": [],
     "wn": "Withholding",
-    "wr": [{ "l": "0% (B2B)", "r": 0 }],
+    "wr": [
+      {
+        "l": "0% (B2B)",
+        "r": 0
+      }
+    ],
     "wd": 0,
     "period": "quarterly",
     "vatDoc": "Income tax",
-    "vatDue": [{ "m": 3, "d": 15, "q": "Q1" }, { "m": 5, "d": 15, "q": "Q2" }, { "m": 8, "d": 15, "q": "Q3" }, { "m": 0, "d": 15, "q": "Q4" }],
-    "annualDue": { "m": 3, "d": 15 }
+    "vatDue": [
+      {
+        "m": 3,
+        "d": 15,
+        "q": "Q1"
+      },
+      {
+        "m": 5,
+        "d": 15,
+        "q": "Q2"
+      },
+      {
+        "m": 8,
+        "d": 15,
+        "q": "Q3"
+      },
+      {
+        "m": 0,
+        "d": 15,
+        "q": "Q4"
+      }
+    ],
+    "annualDue": {
+      "m": 3,
+      "d": 15
+    }
   },
   "AU": {
     "name": "Australia",
@@ -392,32 +1135,88 @@
     "vs": 10,
     "vr": [],
     "wn": "Withholding",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0,
     "period": "quarterly",
     "vatDoc": "BAS",
-    "vatDue": [{ "m": 9, "d": 28, "q": "Q1" }, { "m": 1, "d": 28, "q": "Q2" }, { "m": 3, "d": 28, "q": "Q3" }, { "m": 6, "d": 28, "q": "Q4" }],
-    "annualDue": { "m": 9, "d": 31 }
+    "vatDue": [
+      {
+        "m": 9,
+        "d": 28,
+        "q": "Q1"
+      },
+      {
+        "m": 1,
+        "d": 28,
+        "q": "Q2"
+      },
+      {
+        "m": 3,
+        "d": 28,
+        "q": "Q3"
+      },
+      {
+        "m": 6,
+        "d": 28,
+        "q": "Q4"
+      }
+    ],
+    "annualDue": {
+      "m": 9,
+      "d": 31
+    }
   },
   "IN": {
     "name": "India",
     "vn": "GST",
     "vs": 18,
-    "vr": [{ "l": "Standard", "r": 12 }, { "l": "Low", "r": 5 }],
+    "vr": [
+      {
+        "l": "Standard",
+        "r": 12
+      },
+      {
+        "l": "Low",
+        "r": 5
+      }
+    ],
     "wn": "TDS",
-    "wr": [{ "l": "10%", "r": 10 }],
+    "wr": [
+      {
+        "l": "10%",
+        "r": 10
+      }
+    ],
     "wd": 10
   },
   "JP": {
     "name": "Japan",
     "vn": "消費税",
     "vs": 10,
-    "vr": [{ "l": "軽減税率", "r": 8 }],
+    "vr": [
+      {
+        "l": "軽減税率",
+        "r": 8
+      }
+    ],
     "wn": "源泉徴収",
-    "wr": [{ "l": "10.21%", "r": 10.21 }],
+    "wr": [
+      {
+        "l": "10.21%",
+        "r": 10.21
+      }
+    ],
     "wd": 10.21,
     "period": "yearly",
-    "annualDue": { "m": 2, "d": 15 }
+    "annualDue": {
+      "m": 2,
+      "d": 15
+    }
   },
   "SG": {
     "name": "Singapore",
@@ -425,12 +1224,41 @@
     "vs": 9,
     "vr": [],
     "wn": "Withholding",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0,
     "period": "quarterly",
     "vatDoc": "GST F5",
-    "vatDue": [{ "m": 0, "d": 31, "q": "Q1" }, { "m": 3, "d": 30, "q": "Q2" }, { "m": 6, "d": 31, "q": "Q3" }, { "m": 9, "d": 31, "q": "Q4" }],
-    "annualDue": { "m": 10, "d": 30 }
+    "vatDue": [
+      {
+        "m": 0,
+        "d": 31,
+        "q": "Q1"
+      },
+      {
+        "m": 3,
+        "d": 30,
+        "q": "Q2"
+      },
+      {
+        "m": 6,
+        "d": 31,
+        "q": "Q3"
+      },
+      {
+        "m": 9,
+        "d": 31,
+        "q": "Q4"
+      }
+    ],
+    "annualDue": {
+      "m": 10,
+      "d": 30
+    }
   },
   "AE": {
     "name": "UAE",
@@ -438,11 +1266,37 @@
     "vs": 5,
     "vr": [],
     "wn": "Withholding",
-    "wr": [{ "l": "0%", "r": 0 }],
+    "wr": [
+      {
+        "l": "0%",
+        "r": 0
+      }
+    ],
     "wd": 0,
     "period": "quarterly",
     "vatDoc": "VAT Return",
-    "vatDue": [{ "m": 3, "d": 28, "q": "Q1" }, { "m": 6, "d": 28, "q": "Q2" }, { "m": 9, "d": 28, "q": "Q3" }, { "m": 0, "d": 28, "q": "Q4" }]
+    "vatDue": [
+      {
+        "m": 3,
+        "d": 28,
+        "q": "Q1"
+      },
+      {
+        "m": 6,
+        "d": 28,
+        "q": "Q2"
+      },
+      {
+        "m": 9,
+        "d": 28,
+        "q": "Q3"
+      },
+      {
+        "m": 0,
+        "d": 28,
+        "q": "Q4"
+      }
+    ]
   },
   "SA": {
     "name": "Saudi Arabia",
@@ -450,11 +1304,37 @@
     "vs": 15,
     "vr": [],
     "wn": "Withholding",
-    "wr": [{ "l": "15%", "r": 15 }],
+    "wr": [
+      {
+        "l": "15%",
+        "r": 15
+      }
+    ],
     "wd": 15,
     "period": "quarterly",
     "vatDoc": "VAT Return",
-    "vatDue": [{ "m": 3, "d": 30, "q": "Q1" }, { "m": 6, "d": 30, "q": "Q2" }, { "m": 9, "d": 30, "q": "Q3" }, { "m": 0, "d": 31, "q": "Q4" }]
+    "vatDue": [
+      {
+        "m": 3,
+        "d": 30,
+        "q": "Q1"
+      },
+      {
+        "m": 6,
+        "d": 30,
+        "q": "Q2"
+      },
+      {
+        "m": 9,
+        "d": 30,
+        "q": "Q3"
+      },
+      {
+        "m": 0,
+        "d": 31,
+        "q": "Q4"
+      }
+    ]
   },
   "ZA": {
     "name": "South Africa",
@@ -462,11 +1342,40 @@
     "vs": 15,
     "vr": [],
     "wn": "Withholding Tax",
-    "wr": [{ "l": "15%", "r": 15 }],
+    "wr": [
+      {
+        "l": "15%",
+        "r": 15
+      }
+    ],
     "wd": 15,
     "period": "quarterly",
     "vatDoc": "VAT201",
-    "vatDue": [{ "m": 3, "d": 25, "q": "Q1" }, { "m": 6, "d": 25, "q": "Q2" }, { "m": 9, "d": 25, "q": "Q3" }, { "m": 0, "d": 25, "q": "Q4" }],
-    "annualDue": { "m": 10, "d": 30 }
+    "vatDue": [
+      {
+        "m": 3,
+        "d": 25,
+        "q": "Q1"
+      },
+      {
+        "m": 6,
+        "d": 25,
+        "q": "Q2"
+      },
+      {
+        "m": 9,
+        "d": 25,
+        "q": "Q3"
+      },
+      {
+        "m": 0,
+        "d": 25,
+        "q": "Q4"
+      }
+    ],
+    "annualDue": {
+      "m": 10,
+      "d": 30
+    }
   }
 }
