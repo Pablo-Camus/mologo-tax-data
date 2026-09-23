@@ -29,15 +29,17 @@
   "BE": {
     "income_tax": {
       "name": "IPP / Personenbelasting",
-      "year": 2024,
+      "year": 2026,
       "confidence": "high",
       "brackets": [
-        { "from": 0,     "to": 15820, "rate": 25 },
-        { "from": 15820, "to": 27230, "rate": 40 },
-        { "from": 27230, "to": 46440, "rate": 45 },
-        { "from": 46440, "to": null,  "rate": 50 }
+        { "from": 0,     "to": 16720, "rate": 25 },
+        { "from": 16720, "to": 29510, "rate": 40 },
+        { "from": 29510, "to": 51070, "rate": 45 },
+        { "from": 51070, "to": null,  "rate": 50 }
       ],
-      "source": "https://finances.belgium.be"
+      "note": "Revenus 2026 (exercice d'imposition 2027), federal rates; municipal surcharge on top. Revenus 2025: 16,320 / 28,800 / 49,840.",
+      "source": "https://fin.belgium.be/fr/particuliers/declaration-impot/revenus/taux-imposition",
+      "checked": "2026-09-23"
     },
     "ss": { "name": "Cotisations sociales", "mode": "percent", "rate": 20.5, "source": "https://www.inasti.be" }
   },

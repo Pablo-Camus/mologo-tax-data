@@ -143,8 +143,8 @@
       "note": "Blocks automated fetches (Cloudflare/CAPTCHA). Requires manual review."
     },
     "BE": {
-      "urls": ["https://finances.belgium.be"],
-      "allowlist": ["finances.belgium.be", "inasti.be"],
+      "urls": ["https://fin.belgium.be/fr/particuliers/declaration-impot/revenus/taux-imposition"],
+      "allowlist": ["fin.belgium.be", "finances.belgium.be", "inasti.be"],
       "manual": true,
       "note": "Blocks automated fetches (Cloudflare/CAPTCHA). Requires manual review."
     }
