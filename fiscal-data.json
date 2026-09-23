@@ -1,17 +1,27 @@
 {
   "_meta": {
     "version": "1.1.0",
-    "updated": "2025-06-06",
+    "updated": "2026-09-23",
     "note": "Income tax brackets and social security for self-employed/freelancers. confidence:high = verified source, confidence:low = needs agent verification."
   },
 
   "AT": {
     "income_tax": {
       "name": "Einkommensteuer",
-      "year": 2025,
-      "confidence": "low",
-      "brackets": null,
-      "source": "https://www.bmf.gv.at"
+      "year": 2026,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,       "to": 13539,   "rate": 0 },
+        { "from": 13539,   "to": 21992,   "rate": 20 },
+        { "from": 21992,   "to": 36458,   "rate": 30 },
+        { "from": 36458,   "to": 70365,   "rate": 40 },
+        { "from": 70365,   "to": 104859,  "rate": 48 },
+        { "from": 104859,  "to": 1000000, "rate": 50 },
+        { "from": 1000000, "to": null,    "rate": 55 }
+      ],
+      "note": "55% above 1,000,000 EUR is temporary until 2029.",
+      "source": "https://www.bmf.gv.at/themen/steuern/arbeitnehmerveranlagung/steuertarif-steuerabsetzbetraege/steuertarif-steuerabsetzbetraege.html",
+      "checked": "2026-09-23"
     },
     "ss": { "name": "Sozialversicherung (SVS)", "mode": "percent", "rate": 26.85, "source": "https://www.svs.at" }
   },
@@ -158,7 +168,7 @@
       "note": "State + municipal tax. Combined typically 25-58%.",
       "source": "https://www.vero.fi"
     },
-    "ss": { "name": "YEL (yrittäjän eläkevakuutus)", "mode": "percent", "rate": 24.1, "source": "https://www.etk.fi" }
+    "ss": { "name": "YEL (yrittäjän eläkevakuutus)", "mode": "percent", "rate": 24.4, "note": "2026: single rate for all ages. New entrepreneurs get a 22% discount during their first 4 years.", "source": "https://www.etk.fi/en/finnish-pension-system/financing-and-investments/pension-contributions/self-employed/", "checked": "2026-09-23" }
   },
 
   "FR": {
@@ -291,7 +301,7 @@
       "brackets": null,
       "source": "https://impotsdirects.public.lu"
     },
-    "ss": { "name": "Cotisations sociales", "mode": "percent", "rate": 24, "source": "https://www.ccss.lu" }
+    "ss": { "name": "Cotisations sociales", "mode": "percent", "rate": 24.5, "note": "2026: pension 17% + health 5.6% + cash benefits 0.5% + dependency 1.4%.", "source": "https://ccss.public.lu/fr/parametres-sociaux.html", "checked": "2026-09-23" }
   },
 
   "LV": {
@@ -344,7 +354,7 @@
       "note": "Municipal ~22% + bracket tax 1.7-17.6% + trygdeavgift",
       "source": "https://www.skatteetaten.no"
     },
-    "ss": { "name": "Trygdeavgift", "mode": "percent", "rate": 7.7, "source": "https://www.skatteetaten.no" }
+    "ss": { "name": "Trygdeavgift", "mode": "percent", "rate": 10.8, "note": "Self-employed business income (naeringsinntekt) rate 2026; the employee rate is 7.6%.", "source": "https://www.skatteetaten.no/en/rates/", "checked": "2026-09-23" }
   },
 
   "PL": {
@@ -425,10 +435,17 @@
   "SI": {
     "income_tax": {
       "name": "Dohodnina",
-      "year": 2025,
-      "confidence": "low",
-      "brackets": null,
-      "source": "https://www.fu.gov.si"
+      "year": 2026,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,        "to": 9721.43,  "rate": 16 },
+        { "from": 9721.43,  "to": 28592.44, "rate": 26 },
+        { "from": 28592.44, "to": 57184.88, "rate": 33 },
+        { "from": 57184.88, "to": 82346.23, "rate": 39 },
+        { "from": 82346.23, "to": null,     "rate": 50 }
+      ],
+      "source": "https://www.fu.gov.si/fileadmin/Internet/Davki_in_druge_dajatve/Podrocja/Dohodnina/Letna_odmera_dohodnine/Opis/Lestvica_za_leto_2026.docx",
+      "checked": "2026-09-23"
     },
     "ss": { "name": "Prispevki za socialno varnost", "mode": "percent", "rate": 38.2, "source": "https://www.fu.gov.si" }
   },
