@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "version": "1.1.0",
+    "updated": "2025-06-06",
+    "note": "Income tax brackets and social security for self-employed/freelancers. confidence:high = verified source, confidence:low = needs agent verification."
+  },
+
+  "AT": {
+    "income_tax": {
+      "name": "Einkommensteuer",
+      "year": 2025,
+      "confidence": "low",
+      "brackets": null,
+      "source": "https://www.bmf.gv.at"
+    },
+    "ss": { "name": "Sozialversicherung (SVS)", "mode": "percent", "rate": 26.85, "source": "https://www.svs.at" }
+  },
+
+  "BE": {
+    "income_tax": {
+      "name": "IPP / Personenbelasting",
+      "year": 2024,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,     "to": 15820, "rate": 25 },
+        { "from": 15820, "to": 27230, "rate": 40 },
+        { "from": 27230, "to": 46440, "rate": 45 },
+        { "from": 46440, "to": null,  "rate": 50 }
+      ],
+      "source": "https://finances.belgium.be"
+    },
+    "ss": { "name": "Cotisations sociales", "mode": "percent", "rate": 20.5, "source": "https://www.inasti.be" }
+  },
+
+  "NL": {
+    "income_tax": {
+      "name": "Inkomstenbelasting",
+      "year": 2025,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0,     "to": 75518, "rate": 36.97 },
+        { "from": 75518, "to": null,  "rate": 49.5  }
+      ],
+      "note": "Box 1 rates include national insurance contributions (AOW etc). ZZP can use zelfstandigenaftrek deduction.",
+      "source": "https://www.belastingdienst.nl"
+    },
+    "ss": null
+  }
+}

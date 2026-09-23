@@ -1,0 +1,152 @@
+{
+  "_meta": {
+    "note": "Official sources the weekly fiscal-monitor GitHub Action is allowed to fetch and cite per country. Every proposal the bot accepts must come from a URL whose host is in that country's allowlist (or the shared euVatAllowlistExtra for EU VAT questions). manual:true countries are skipped by the fetcher (bot-blocked) and must be verified by hand. Optional per-field `hints` are passed verbatim into the Claude prompt for that country/field — use them to flag known traps (partial scales, regional/municipal layers, wrong regime, employee-vs-self-employed rate) that would otherwise produce a technically-sourced but semantically wrong proposal. See scripts/lib/claude-client.mjs.",
+    "updated": "2026-09-23"
+  },
+  "euVatAllowlistExtra": ["ec.europa.eu"],
+  "countries": {
+    "GB": {
+      "urls": ["https://www.gov.uk/income-tax-rates", "https://www.gov.uk/self-employed-national-insurance-rates"],
+      "allowlist": ["gov.uk"],
+      "hints": {
+        "income_tax": "gov.uk/income-tax-rates shows rates for England, Wales and Northern Ireland (rUK) only. Scotland has its own bands/rates and is out of scope — never conflate the two. The stored brackets are rUK."
+      }
+    },
+    "US": {
+      "urls": ["https://www.irs.gov/filing/federal-income-tax-rates-and-brackets"],
+      "allowlist": ["irs.gov"],
+      "hints": {
+        "income_tax": "Federal brackets only, single filer. State income tax (0-13.3% depending on state) is intentionally NOT included — do not add it in or treat its absence as an error."
+      }
+    },
+    "NZ": {
+      "urls": ["https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/tax-rates-for-individuals"],
+      "allowlist": ["ird.govt.nz"]
+    },
+    "SG": {
+      "urls": ["https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates"],
+      "allowlist": ["iras.gov.sg"]
+    },
+    "ES": {
+      "urls": [
+        "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c15-calculo-impuesto-determinacion-cuotas-integras/gravamen-base-liquidable-general/gravamen-estatal.html",
+        "https://www.seg-social.es"
+      ],
+      "allowlist": ["agenciatributaria.gob.es", "agenciatributaria.es", "seg-social.es"],
+      "hints": {
+        "income_tax": "The AEAT page linked here is the STATE-ONLY scale (escala/gravamen estatal: roughly 9.5/12/15/18.5/22.5/24.5%). The stored 'brackets' are state + the default autonomic scale COMBINED — for the default autonomic scale (used by most regions unless they legislate their own), this combined rate is exactly 2x the state rate at the same income thresholds. Do NOT propose replacing the stored combined rates with the raw state-only rates from this page — that would be wrong, not an update. Only propose a change if the state scale's own rates or thresholds changed (in which case double them at the same thresholds to get the new combined value), or if the page itself states the combined/autonomic-inclusive rate.",
+        "ss": "Cuota de autónomos depends on a contribution base the freelancer chooses themselves (tramos) — there is no single official 'the rate'. Do not propose a flat percent rate; only flag a change if the fundamental system changes (e.g. stops being a chosen-base fixed amount)."
+      }
+    },
+    "FR": {
+      "urls": ["https://www.service-public.fr/particuliers/vosdroits/F1419", "https://www.urssaf.fr"],
+      "allowlist": ["service-public.fr", "impots.gouv.fr", "urssaf.fr"],
+      "hints": {
+        "income_tax": "service-public.fr shows brackets per 'part' of quotient familial for a single person (1 part, no dependents) — this already matches the stored single-person brackets. Do not apply family-quotient splitting/adjustments."
+      }
+    },
+    "PT": {
+      "urls": ["https://www.portaldasfinancas.gov.pt/at/html/index.html", "https://www.seg-social.pt"],
+      "allowlist": ["portaldasfinancas.gov.pt", "seg-social.pt"],
+      "hints": {
+        "income_tax": "Rates are for mainland Portugal (Continente). Madeira and Azores apply reduced regional brackets — do not conflate those with the stored mainland brackets."
+      }
+    },
+    "IT": {
+      "urls": [
+        "https://www.agenziaentrate.gov.it/portale/imposta-sul-reddito-delle-persone-fisiche-irpef-/aliquote-e-calcolo-dell-irpef",
+        "https://www.inps.it"
+      ],
+      "allowlist": ["agenziaentrate.gov.it", "inps.it"],
+      "hints": {
+        "income_tax": "The stored brackets are the ORDINARY IRPEF regime. Many freelancers instead use 'regime forfettario' (flat 15%, or 5% for the first 5 years, for income under ~85,000€) — that is an optional alternate regime, not a replacement for the ordinary scale. Do not propose replacing the ordinary brackets with the forfettario flat rate."
+      }
+    },
+    "PL": {
+      "urls": [
+        "https://www.podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/rozliczenie-dochodow-opodatkowanych-skala-podatkowa",
+        "https://www.zus.pl"
+      ],
+      "allowlist": ["podatki.gov.pl", "zus.pl"],
+      "hints": {
+        "income_tax": "The stored brackets are the ordinary progressive scale (skala podatkowa). Freelancers may alternatively choose a flat 19% (podatek liniowy) or lump-sum (ryczałt) regime — those are optional alternates, not replacements for the stored ordinary scale.",
+        "ss": "ZUS is a fixed monthly amount (not a percent of income) that varies by scheme (standard ZUS, 'mały ZUS', 'ulga na start'). Do not propose a flat percent rate; only flag a change if the underlying structure itself changes."
+      }
+    },
+    "SE": {
+      "urls": [
+        "https://www.skatteverket.se/privat/etjansterochblanketter/svarpavanligafragor/inkomstavtjanst/privattjansteinkomsterfaq/narskamanbetalastatliginkomstskattochhurhogarden.5.10010ec103545f243e8000166.html"
+      ],
+      "allowlist": ["skatteverket.se"],
+      "hints": {
+        "income_tax": "Combines an average municipal tax (~32%, actually varies 29-35% by kommun — there is no single official municipal figure) with state tax above a threshold. Only propose a change to the state tax threshold/rate itself, not for municipal variation, which is out of scope for a single stored number."
+      }
+    },
+    "AT": {
+      "urls": ["https://www.bmf.gv.at", "https://www.svs.at"],
+      "allowlist": ["bmf.gv.at", "svs.at"]
+    },
+    "DK": {
+      "urls": ["https://www.skat.dk"],
+      "allowlist": ["skat.dk"],
+      "hints": {
+        "income_tax": "Combines municipal tax (~25%, varies by kommune — no single official figure) with state tax (bundskat/topskat). Only propose a change to the state-tax component/thresholds, not for municipal variation."
+      }
+    },
+    "FI": {
+      "urls": ["https://www.vero.fi", "https://www.etk.fi"],
+      "allowlist": ["vero.fi", "etk.fi"],
+      "hints": {
+        "income_tax": "Combines state tax (progressive) with municipal tax (varies ~4.7-10.86% by municipality — no single official figure). Only propose a change to the state-tax brackets, not for municipal variation.",
+        "ss": "YEL (yrittäjän eläkevakuutus) is the SELF-EMPLOYED pension insurance rate — do not confuse with TyEL, the employee-side pension rate."
+      }
+    },
+    "HR": {
+      "urls": ["https://www.porezna-uprava.hr"],
+      "allowlist": ["porezna-uprava.hr"],
+      "hints": {
+        "income_tax": "A local surtax (prirez) on top of the state rate is set per municipality (0-18%, Zagreb highest) — no single official figure. Only propose a change to the state-level rate/brackets, not for municipal surtax variation."
+      }
+    },
+    "LU": {
+      "urls": ["https://impotsdirects.public.lu", "https://www.ccss.lu"],
+      "allowlist": ["impotsdirects.public.lu", "public.lu", "ccss.lu"]
+    },
+    "MT": {
+      "urls": ["https://cfr.gov.mt", "https://socialsecurity.gov.mt"],
+      "allowlist": ["cfr.gov.mt", "socialsecurity.gov.mt"],
+      "manual": true,
+      "note": "Blocks automated fetches (bot/CAPTCHA protection). Requires manual review."
+    },
+    "SI": {
+      "urls": ["https://www.fu.gov.si"],
+      "allowlist": ["fu.gov.si"]
+    },
+    "CH": {
+      "urls": ["https://www.estv.admin.ch", "https://www.ahv-iv.ch"],
+      "allowlist": ["estv.admin.ch", "ahv-iv.ch", "admin.ch"],
+      "hints": {
+        "income_tax": "estv.admin.ch shows FEDERAL tax only. Cantonal and communal taxes vary hugely (this is explicitly why confidence is 'low' with brackets:null) and are NOT in scope — only propose a change to the federal-level brackets, never a cantonal figure for one specific canton."
+      }
+    },
+    "NO": {
+      "urls": ["https://www.skatteetaten.no"],
+      "allowlist": ["skatteetaten.no", "lovdata.no"],
+      "hints": {
+        "income_tax": "Norwegian income tax layers a flat ~22% municipal/common tax with progressive 'trinnskatt' (bracket tax) on top. 'Trygdeavgift' (social security) is stored SEPARATELY under ss — never fold trygdeavgift into income_tax.rate. Only propose a change to the trinnskatt steps/rates or the common tax rate, not a combined all-in figure."
+      }
+    },
+    "AU": {
+      "urls": ["https://www.ato.gov.au"],
+      "allowlist": ["ato.gov.au"],
+      "manual": true,
+      "note": "Blocks automated fetches (Cloudflare/CAPTCHA). Requires manual review."
+    },
+    "BE": {
+      "urls": ["https://finances.belgium.be"],
+      "allowlist": ["finances.belgium.be", "inasti.be"],
+      "manual": true,
+      "note": "Blocks automated fetches (Cloudflare/CAPTCHA). Requires manual review."
+    }
+  }
+}
