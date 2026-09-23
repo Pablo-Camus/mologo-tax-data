@@ -59,6 +59,8 @@ async function main() {
   const allFetchFailures = [];
   const allParseFailures = [];
   const allRejectedSources = [];
+  const checkedCodes = [];
+  const okCodes = []; // pages fetched and Claude answered with a parseable proposal
 
   let fiscalRaw = fiscalRawOriginal;
 
@@ -77,6 +79,9 @@ async function main() {
       extraAllowlist: sourcesConfig.euVatAllowlistExtra || [],
     });
 
+    checkedCodes.push(code);
+    const allUrlsFailed = result.fetchFailures.length >= (config.urls || []).length;
+    if (!allUrlsFailed && result.parseFailures.length === 0) okCodes.push(code);
     allFetchFailures.push(...result.fetchFailures);
     allParseFailures.push(...result.parseFailures);
     allRejectedSources.push(...result.rejectedSources);
@@ -121,9 +126,28 @@ async function main() {
     return;
   }
 
+  // Failures are never silent: they are always logged, and if no country
+  // could be checked at all (e.g. an invalid CLAUDE_API_KEY) the job fails.
+  const failureCount = allFetchFailures.length + allParseFailures.length;
+  if (failureCount > 0) {
+    console.warn(`[fiscal-monitor] ${failureCount} failure(s):\n` +
+      [...allFetchFailures, ...allParseFailures].map((f) => `- ${f.code}: ${f.reason}`).join('\n'));
+  }
+  const allFailed = checkedCodes.length > 0 && okCodes.length === 0;
+
   const hasChangesOrDiscrepancies = allApplied.length > 0 || allDiscrepancies.length > 0;
   if (!hasChangesOrDiscrepancies) {
-    console.log('[fiscal-monitor] no changes and no discrepancies — silent exit (no PR, no email).');
+    if (failureCount > 0) {
+      await sendNotification({
+        subject: allFailed
+          ? '[Mologo fiscal-monitor] FAILED — no country could be checked'
+          : `[Mologo fiscal-monitor] no changes, but ${failureCount} check(s) failed`,
+        text: report,
+      });
+      if (allFailed) process.exitCode = 1;
+      return;
+    }
+    console.log('[fiscal-monitor] no changes, no discrepancies, no failures — silent exit (no PR, no email).');
     return;
   }
 
