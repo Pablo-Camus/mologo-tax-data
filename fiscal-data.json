@@ -174,16 +174,18 @@
   "FR": {
     "income_tax": {
       "name": "Impôt sur le revenu",
-      "year": 2024,
+      "year": 2025,
       "confidence": "high",
       "brackets": [
-        { "from": 0,      "to": 11294,  "rate": 0  },
-        { "from": 11294,  "to": 28797,  "rate": 11 },
-        { "from": 28797,  "to": 82341,  "rate": 30 },
-        { "from": 82341,  "to": 177106, "rate": 41 },
-        { "from": 177106, "to": null,   "rate": 45 }
+        { "from": 0,      "to": 11600,  "rate": 0  },
+        { "from": 11600,  "to": 29579,  "rate": 11 },
+        { "from": 29579,  "to": 84577,  "rate": 30 },
+        { "from": 84577,  "to": 181917, "rate": 41 },
+        { "from": 181917, "to": null,   "rate": 45 }
       ],
-      "source": "https://www.impots.gouv.fr"
+      "note": "Barème 2026 (revenus 2025), per part de quotient familial.",
+      "source": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1419",
+      "checked": "2026-09-23"
     },
     "ss": { "name": "Cotisations sociales", "mode": "percent", "rate": 22, "note": "Auto-entrepreneur BNC rate. Régime réel: ~45%.", "source": "https://www.urssaf.fr" }
   },
@@ -264,16 +266,16 @@
   "IT": {
     "income_tax": {
       "name": "IRPEF",
-      "year": 2024,
+      "year": 2026,
       "confidence": "high",
       "brackets": [
-        { "from": 0,     "to": 15000, "rate": 23 },
-        { "from": 15000, "to": 28000, "rate": 25 },
-        { "from": 28000, "to": 50000, "rate": 35 },
+        { "from": 0,     "to": 28000, "rate": 23 },
+        { "from": 28000, "to": 50000, "rate": 33 },
         { "from": 50000, "to": null,  "rate": 43 }
       ],
-      "note": "Regime forfettario: flat 15% (5% for new businesses first 5 years) for income < ~85,000€",
-      "source": "https://www.agenziaentrate.gov.it"
+      "note": "2026: middle rate 35% → 33% (Legge di Bilancio 2026). Regime forfettario: flat 15% (5% for new businesses first 5 years) for income < ~85,000€",
+      "source": "https://www.agenziaentrate.gov.it/portale/imposta-sul-reddito-delle-persone-fisiche-irpef-/aliquote-e-calcolo-dell-irpef",
+      "checked": "2026-09-23"
     },
     "ss": { "name": "Contributi INPS", "mode": "percent", "rate": 26.23, "note": "Gestione Separata rate for freelancers without other SS coverage", "source": "https://www.inps.it" }
   },
@@ -420,14 +422,15 @@
   "SE": {
     "income_tax": {
       "name": "Inkomstskatt",
-      "year": 2025,
+      "year": 2026,
       "confidence": "high",
       "brackets": [
-        { "from": 0,      "to": 598500, "rate": 32 },
-        { "from": 598500, "to": null,   "rate": 52 }
+        { "from": 0,      "to": 643000, "rate": 32 },
+        { "from": 643000, "to": null,   "rate": 52 }
       ],
-      "note": "Municipal tax ~32% (average, varies 29-35%). State tax ~20% above ~598,500 SEK.",
-      "source": "https://www.skatteverket.se"
+      "note": "Municipal tax ~32% (average, varies 29-35%). State tax 20% on taxable income above 643,000 SEK (skiktgräns 2026).",
+      "source": "https://www.skatteverket.se/privat/etjansterochblanketter/svarpavanligafragor/inkomstavtjanst/privattjansteinkomsterfaq/narskamanbetalastatliginkomstskattochhurhogarden.5.10010ec103545f243e8000166.html",
+      "checked": "2026-09-23"
     },
     "ss": { "name": "Egenavgifter", "mode": "percent", "rate": 28.97, "note": "For persons under 65", "source": "https://www.skatteverket.se" }
   },
@@ -765,14 +768,15 @@
       "year": 2025,
       "confidence": "high",
       "brackets": [
-        { "from": 0,     "to": 14000,  "rate": 10.5 },
-        { "from": 14000, "to": 48000,  "rate": 17.5 },
-        { "from": 48000, "to": 70000,  "rate": 30   },
-        { "from": 70000, "to": 180000, "rate": 33   },
-        { "from": 180000,"to": null,   "rate": 39   }
+        { "from": 0,      "to": 15600,  "rate": 10.5 },
+        { "from": 15600,  "to": 53500,  "rate": 17.5 },
+        { "from": 53500,  "to": 78100,  "rate": 30   },
+        { "from": 78100,  "to": 180000, "rate": 33   },
+        { "from": 180000, "to": null,   "rate": 39   }
       ],
-      "note": "Amounts in NZD.",
-      "source": "https://www.ird.govt.nz"
+      "note": "Amounts in NZD. Rates from 1 April 2025.",
+      "source": "https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/tax-rates-for-individuals",
+      "checked": "2026-09-23"
     },
     "ss": null
   },
