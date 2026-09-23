@@ -1,0 +1,110 @@
+{
+  "_meta": {
+    "note": "Official sources the weekly fiscal-monitor GitHub Action is allowed to fetch and cite per country. Every proposal the bot accepts must come from a URL whose host is in that country's allowlist (or the shared euVatAllowlistExtra for EU VAT questions). manual:true countries are skipped by the fetcher (bot-blocked) and must be verified by hand.",
+    "updated": "2026-09-23"
+  },
+  "euVatAllowlistExtra": ["ec.europa.eu"],
+  "countries": {
+    "GB": {
+      "urls": ["https://www.gov.uk/income-tax-rates", "https://www.gov.uk/self-employed-national-insurance-rates"],
+      "allowlist": ["gov.uk"]
+    },
+    "US": {
+      "urls": ["https://www.irs.gov/filing/federal-income-tax-rates-and-brackets"],
+      "allowlist": ["irs.gov"]
+    },
+    "NZ": {
+      "urls": ["https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/tax-rates-for-individuals"],
+      "allowlist": ["ird.govt.nz"]
+    },
+    "SG": {
+      "urls": ["https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates"],
+      "allowlist": ["iras.gov.sg"]
+    },
+    "ES": {
+      "urls": [
+        "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c15-calculo-impuesto-determinacion-cuotas-integras/gravamen-base-liquidable-general/gravamen-estatal.html",
+        "https://www.seg-social.es"
+      ],
+      "allowlist": ["agenciatributaria.gob.es", "agenciatributaria.es", "seg-social.es"]
+    },
+    "FR": {
+      "urls": ["https://www.service-public.fr/particuliers/vosdroits/F1419", "https://www.urssaf.fr"],
+      "allowlist": ["service-public.fr", "impots.gouv.fr", "urssaf.fr"]
+    },
+    "PT": {
+      "urls": ["https://www.portaldasfinancas.gov.pt/at/html/index.html", "https://www.seg-social.pt"],
+      "allowlist": ["portaldasfinancas.gov.pt", "seg-social.pt"]
+    },
+    "IT": {
+      "urls": [
+        "https://www.agenziaentrate.gov.it/portale/imposta-sul-reddito-delle-persone-fisiche-irpef-/aliquote-e-calcolo-dell-irpef",
+        "https://www.inps.it"
+      ],
+      "allowlist": ["agenziaentrate.gov.it", "inps.it"]
+    },
+    "PL": {
+      "urls": [
+        "https://www.podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/rozliczenie-dochodow-opodatkowanych-skala-podatkowa",
+        "https://www.zus.pl"
+      ],
+      "allowlist": ["podatki.gov.pl", "zus.pl"]
+    },
+    "SE": {
+      "urls": [
+        "https://www.skatteverket.se/privat/etjansterochblanketter/svarpavanligafragor/inkomstavtjanst/privattjansteinkomsterfaq/narskamanbetalastatliginkomstskattochhurhogarden.5.10010ec103545f243e8000166.html"
+      ],
+      "allowlist": ["skatteverket.se"]
+    },
+    "AT": {
+      "urls": ["https://www.bmf.gv.at", "https://www.svs.at"],
+      "allowlist": ["bmf.gv.at", "svs.at"]
+    },
+    "DK": {
+      "urls": ["https://www.skat.dk"],
+      "allowlist": ["skat.dk"]
+    },
+    "FI": {
+      "urls": ["https://www.vero.fi", "https://www.etk.fi"],
+      "allowlist": ["vero.fi", "etk.fi"]
+    },
+    "HR": {
+      "urls": ["https://www.porezna-uprava.hr"],
+      "allowlist": ["porezna-uprava.hr"]
+    },
+    "LU": {
+      "urls": ["https://impotsdirects.public.lu", "https://www.ccss.lu"],
+      "allowlist": ["impotsdirects.public.lu", "public.lu", "ccss.lu"]
+    },
+    "MT": {
+      "urls": ["https://cfr.gov.mt", "https://socialsecurity.gov.mt"],
+      "allowlist": ["cfr.gov.mt", "socialsecurity.gov.mt"],
+      "manual": true,
+      "note": "Blocks automated fetches (bot/CAPTCHA protection). Requires manual review."
+    },
+    "SI": {
+      "urls": ["https://www.fu.gov.si"],
+      "allowlist": ["fu.gov.si"]
+    },
+    "CH": {
+      "urls": ["https://www.estv.admin.ch", "https://www.ahv-iv.ch"],
+      "allowlist": ["estv.admin.ch", "ahv-iv.ch", "admin.ch"]
+    },
+    "NO": {
+      "urls": ["https://www.skatteetaten.no"],
+      "allowlist": ["skatteetaten.no", "lovdata.no"]
+    },
+    "AU": {
+      "urls": ["https://www.ato.gov.au"],
+      "allowlist": ["ato.gov.au"],
+      "manual": true,
+      "note": "Blocks automated fetches (Cloudflare/CAPTCHA). Requires manual review."
+    },
+    "BE": {
+      "urls": ["https://finances.belgium.be"],
+      "allowlist": ["finances.belgium.be", "inasti.be"],
+      "manual": true,
+      "note": "Blocks automated fetches (Cloudflare/CAPTCHA). Requires manual review."
+    }
+  }
+}

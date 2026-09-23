@@ -1,0 +1,14 @@
+{
+  "name": "mologo-tax-data",
+  "private": true,
+  "type": "module",
+  "description": "Country tax rate data for Mologo, plus the weekly fiscal-data monitor GitHub Action.",
+  "scripts": {
+    "test": "node --test scripts/__tests__/*.test.mjs",
+    "validate": "node scripts/validate.mjs",
+    "monitor:dry-run": "node scripts/fiscal-monitor.mjs --dry-run"
+  },
+  "dependencies": {
+    "nodemailer": "^10.0.10"
+  }
+}
