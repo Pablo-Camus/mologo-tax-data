@@ -39,8 +39,8 @@
       }
     },
     "FR": {
-      "urls": ["https://www.service-public.gouv.fr/particuliers/vosdroits/F1419", "https://www.urssaf.fr"],
-      "allowlist": ["service-public.gouv.fr", "service-public.fr", "impots.gouv.fr", "urssaf.fr"],
+      "urls": ["https://www.service-public.fr/particuliers/vosdroits/F1419", "https://www.urssaf.fr"],
+      "allowlist": ["service-public.fr", "impots.gouv.fr", "urssaf.fr"],
       "hints": {
         "income_tax": "service-public.fr shows brackets per 'part' of quotient familial for a single person (1 part, no dependents) — this already matches the stored single-person brackets. Do not apply family-quotient splitting/adjustments."
       }
