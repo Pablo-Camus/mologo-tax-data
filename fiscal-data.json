@@ -202,7 +202,7 @@
       "note": "Personal allowance tapers to 0 for income over £100,000. Scotland has different rates.",
       "source": "https://www.gov.uk/income-tax-rates"
     },
-    "ss": { "name": "National Insurance (Class 4)", "mode": "percent", "rate": 9, "note": "9% on profits £12,570–£50,270; 2% above. Plus £3.45/week Class 2 (2024-25).", "source": "https://www.gov.uk/self-employed-national-insurance-rates" }
+    "ss": { "name": "National Insurance (Class 4)", "mode": "percent", "rate": 6, "note": "6% on profits £12,570–£50,270; 2% above (2026-27). Class 2 is treated as paid above £7,105; voluntary £3.65/week below.", "source": "https://www.gov.uk/self-employed-national-insurance-rates", "checked": "2026-09-23" }
   },
 
   "GR": {
