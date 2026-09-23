@@ -4,6 +4,7 @@
 // (fetchPages, askClaude) so this stays unit-testable with fixtures.
 
 import { parseProposal, isAllowedSource } from './parse-proposal.mjs';
+import { incomeTaxChanged, ssChanged } from './compare-values.mjs';
 
 /**
  * @param {object} params
@@ -28,7 +29,7 @@ export async function processCountry({ code, config, currentEntry, fetchPages, a
   for (const f of failures) result.fetchFailures.push({ code, reason: `${f.url} — ${f.reason}` });
   if (!text || !text.trim()) return result;
 
-  const claudeResult = await askClaude({ code, currentEntry, pageText: text });
+  const claudeResult = await askClaude({ code, currentEntry, pageText: text, hints: config.hints });
   if (!claudeResult.ok) {
     result.parseFailures.push({ code, reason: claudeResult.reason });
     return result;
@@ -59,6 +60,13 @@ export async function processCountry({ code, config, currentEntry, fetchPages, a
     }
 
     const currentField = field === 'income_tax' ? currentEntry?.income_tax : currentEntry?.ss;
+
+    // Claude's own "changed" flag is unreliable (observed false positives
+    // where brackets/year/mode/rate were numerically identical to what's
+    // stored). Re-derive "did anything that matters actually change?"
+    // ourselves — note/wording/sourceUrl/quote are never part of this check.
+    const actuallyChanged = field === 'income_tax' ? incomeTaxChanged(currentField, p) : ssChanged(currentField, p);
+    if (!actuallyChanged) continue;
 
     if (currentConfidence === 'high') {
       result.discrepancyFields.push({ code, field, current: currentField, proposed: p, sourceUrl: p.sourceUrl, quote: p.quote });

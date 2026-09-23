@@ -110,6 +110,29 @@ test('processCountry: Claude API failure surfaces as parseFailure, not thrown', 
   assert.match(result.parseFailures[0].reason, /529/);
 });
 
+test('processCountry: Claude says changed:true but values are identical (GB false positive) → neither applied nor discrepancy', async () => {
+  const highEntry = { ...currentEntry, income_tax: { ...currentEntry.income_tax, confidence: 'high', year: 2026, brackets: [{ from: 0, to: null, rate: 45 }] } };
+  const raw = JSON.stringify({
+    changed: true,
+    income_tax: {
+      year: 2026,
+      brackets: [{ from: 0, to: null, rate: 45 }], // identical to stored
+      note: 'differently worded note',
+      sourceUrl: 'https://www.bmf.gv.at',
+      quote: 'some quote',
+    },
+  });
+  const result = await processCountry({
+    code: 'AT',
+    config,
+    currentEntry: highEntry,
+    fetchPages: fakeFetch(),
+    askClaude: async () => ({ ok: true, raw }),
+  });
+  assert.equal(result.appliedFields.length, 0);
+  assert.equal(result.discrepancyFields.length, 0);
+});
+
 test('mergeIncomeTaxUpdate: always downgrades confidence to medium, never high', () => {
   const merged = mergeIncomeTaxUpdate(
     { name: 'X', confidence: 'low' },

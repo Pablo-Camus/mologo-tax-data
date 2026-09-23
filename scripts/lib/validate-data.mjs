@@ -34,6 +34,26 @@ export const KNOWN_LEGIT_VAT_DUPES = [
   ['SA', 'ZA'], // both 15% standard VAT, no reduced rates, generic name "VAT" — coincidence, verified 2026-09-23
 ];
 
+/**
+ * Explicit, documented exceptions to the "vr rate < vs" rule: entries under
+ * `vr` (`{l, r}`) that are legitimate ALTERNATE rates a user can select in
+ * the app, not a "reduced" rate that must be lower than the standard one.
+ * Each entry is `{ code, label }`, matched against `entry.vr[i].l` exactly.
+ * Verify with a fresh read of the app's rate picker before adding here —
+ * see AGENTS.md §13 stop condition (1).
+ */
+export const KNOWN_VAT_ALTERNATE_RATE_EXCEPTIONS = [
+  // CA: GST (5%, federal, stored as vs) vs HST (13-15%, combined federal+provincial
+  // in HST-participating provinces). HST isn't a "reduced" rate under GST — it's an
+  // alternate rate a Canadian user picks depending on their province. Selectable in
+  // the app's vr dropdown like any other vr option. Verified 2026-09-23.
+  { code: 'CA', label: 'HST (combined)' },
+];
+
+function isKnownVatAlternateRate(code, label) {
+  return KNOWN_VAT_ALTERNATE_RATE_EXCEPTIONS.some((e) => e.code === code && e.label === label);
+}
+
 function setsEqual(a, b) {
   return JSON.stringify(a) === JSON.stringify(b);
 }
@@ -151,8 +171,8 @@ export function validateTaxData(data) {
     }
     if (Array.isArray(entry.vr)) {
       for (const r of entry.vr) {
-        if (typeof r.r === 'number' && typeof entry.vs === 'number' && r.r >= entry.vs) {
-          errors.push(`${code}: reduced VAT rate "${r.l}" (${r.r}) is not less than standard vs (${entry.vs})`);
+        if (typeof r.r === 'number' && typeof entry.vs === 'number' && r.r >= entry.vs && !isKnownVatAlternateRate(code, r.l)) {
+          errors.push(`${code}: reduced VAT rate "${r.l}" (${r.r}) is not less than standard vs (${entry.vs}) — add to KNOWN_VAT_ALTERNATE_RATE_EXCEPTIONS in scripts/lib/validate-data.mjs if this is a legitimate alternate rate rather than a reduced one`);
         }
       }
       const fp = JSON.stringify({ vn: entry.vn, vs: entry.vs, vr: [...entry.vr].map((r) => r.r).sort() });

@@ -125,6 +125,18 @@ test('validateTaxData: rejects a reduced rate >= standard rate', () => {
   assert.ok(errors.some((e) => e.includes('is not less than standard vs')));
 });
 
+test('validateTaxData: CA "HST (combined)" is an allowlisted exception, not flagged', () => {
+  const data = { CA: { name: 'Canada', vn: 'GST/HST', vs: 5, vr: [{ l: 'HST (combined)', r: 15 }], wn: 'W', wr: [], wd: 0 } };
+  const errors = validateTaxData(data);
+  assert.ok(!errors.some((e) => e.includes('is not less than standard vs')));
+});
+
+test('validateTaxData: the exception is label-specific — a different high vr label on CA is still flagged', () => {
+  const data = { CA: { name: 'Canada', vn: 'GST/HST', vs: 5, vr: [{ l: 'Some other rate', r: 15 }], wn: 'W', wr: [], wd: 0 } };
+  const errors = validateTaxData(data);
+  assert.ok(errors.some((e) => e.includes('is not less than standard vs')));
+});
+
 test('validateTaxData: flags identical VAT name+rate set across countries', () => {
   const data = {
     XX: { name: 'X', vn: 'VAT', vs: 15, vr: [], wn: 'W', wr: [], wd: 0 },
