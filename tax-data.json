@@ -662,11 +662,19 @@
     "vr": [
       {
         "l": "Reduced",
-        "r": 7
+        "r": 12
       },
       {
         "l": "Reduced II",
+        "r": 7
+      },
+      {
+        "l": "Reduced III",
         "r": 5
+      },
+      {
+        "l": "Zero",
+        "r": 0
       }
     ],
     "wn": "Withholding Tax",

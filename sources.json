@@ -88,7 +88,7 @@
     },
     "DK": {
       "urls": ["https://www.skat.dk"],
-      "allowlist": ["skat.dk"],
+      "allowlist": ["skat.dk", "svmn.dk"],
       "hints": {
         "income_tax": "Combines municipal tax (~25%, varies by kommune — no single official figure) with state tax (bundskat/topskat). Only propose a change to the state-tax component/thresholds, not for municipal variation."
       }
@@ -103,7 +103,7 @@
     },
     "HR": {
       "urls": ["https://www.porezna-uprava.hr"],
-      "allowlist": ["porezna-uprava.hr"],
+      "allowlist": ["porezna-uprava.hr", "porezna-uprava.gov.hr"],
       "hints": {
         "income_tax": "A local surtax (prirez) on top of the state rate is set per municipality (0-18%, Zagreb highest) — no single official figure. Only propose a change to the state-level rate/brackets, not for municipal surtax variation."
       }
@@ -114,7 +114,7 @@
     },
     "MT": {
       "urls": ["https://cfr.gov.mt", "https://socialsecurity.gov.mt"],
-      "allowlist": ["cfr.gov.mt", "socialsecurity.gov.mt"],
+      "allowlist": ["cfr.gov.mt", "socialsecurity.gov.mt", "mtca.gov.mt"],
       "manual": true,
       "note": "Blocks automated fetches (bot/CAPTCHA protection). Requires manual review."
     },

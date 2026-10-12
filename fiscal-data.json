@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.1.0",
-    "updated": "2026-09-23",
+    "updated": "2026-10-12",
     "note": "Income tax brackets and social security for self-employed/freelancers. confidence:high = verified source, confidence:low = needs agent verification."
   },
 
@@ -23,7 +23,7 @@
       "source": "https://www.bmf.gv.at/themen/steuern/arbeitnehmerveranlagung/steuertarif-steuerabsetzbetraege/steuertarif-steuerabsetzbetraege.html",
       "checked": "2026-09-23"
     },
-    "ss": { "name": "Sozialversicherung (SVS)", "mode": "percent", "rate": 26.85, "source": "https://www.svs.at" }
+    "ss": { "name": "Sozialversicherung (SVS)", "mode": "percent", "rate": 26.83, "note": "GSVG 2026: pension 18.50 + health 6.80 + Selbständigenvorsorge 1.53, plus accident insurance 12.96 EUR/month; minimum base 551.10 EUR/month. Checked 2026-10-12.", "source": "https://www.svs.at/cdscontent/?contentid=10007.816634&portal=svsportal" }
   },
 
   "BE": {
@@ -41,7 +41,7 @@
       "source": "https://fin.belgium.be/fr/particuliers/declaration-impot/revenus/taux-imposition",
       "checked": "2026-09-23"
     },
-    "ss": { "name": "Cotisations sociales", "mode": "percent", "rate": 20.5, "source": "https://www.inasti.be" }
+    "ss": { "name": "Cotisations sociales", "mode": "percent", "rate": 20.5, "note": "2026, main activity: 20.50% up to 75,024.54 EUR, 14.16% up to 110,562.42 EUR; minimum 890.42 and maximum 5,103.05 EUR per quarter (excl. fund fees). Checked 2026-10-12.", "source": "https://socialsecurity.belgium.be/sites/default/files/content/docs/fr/elaboration-politique-sociale/independants/note_de_cotisations_2026_tableau_fr.pdf" }
   },
 
   "BG": {
@@ -59,14 +59,27 @@
 
   "CH": {
     "income_tax": {
-      "name": "Einkommenssteuer",
-      "year": 2025,
-      "confidence": "low",
-      "brackets": null,
-      "note": "Federal + cantonal rates vary significantly by canton",
-      "source": "https://www.estv.admin.ch"
+      "name": "Direkte Bundessteuer (Alleinstehende)",
+      "year": 2026,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0, "to": 15200, "rate": 0 },
+        { "from": 15200, "to": 33200, "rate": 0.77 },
+        { "from": 33200, "to": 43500, "rate": 0.88 },
+        { "from": 43500, "to": 58000, "rate": 2.64 },
+        { "from": 58000, "to": 76200, "rate": 2.97 },
+        { "from": 76200, "to": 82100, "rate": 5.94 },
+        { "from": 82100, "to": 108900, "rate": 6.6 },
+        { "from": 108900, "to": 141500, "rate": 8.8 },
+        { "from": 141500, "to": 185100, "rate": 11 },
+        { "from": 185100, "to": 793900, "rate": 13.2 },
+        { "from": 793900, "to": null, "rate": 11.5 }
+      ],
+      "note": "Federal tax only (ESTV Form. 58c 2026, single persons); cantonal and communal tax is added on top and varies by canton. Lower end of the 0.77% band derived from the printed step table.",
+      "source": "https://www.estv.admin.ch/dam/de/sd-web/gnde9CmEsalK/dbst-tairfe-58c-2026-dfi.pdf",
+      "checked": "2026-10-12"
     },
-    "ss": { "name": "AHV/IV/EO", "mode": "percent", "rate": 10.6, "source": "https://www.ahv-iv.ch" }
+    "ss": { "name": "AHV/IV/EO (Selbständige)", "mode": "percent", "rate": 10, "note": "2026: AHV 8.1 + IV 1.4 + EO 0.5 = 10.0% from CHF 60,500; sliding scale 5.371-9.321% below; minimum CHF 530 under CHF 10,100; plus admin costs up to 5% of contributions. Checked 2026-10-12.", "source": "https://ahv-iv.ch/p/2.02.d" }
   },
 
   "CY": {
@@ -120,12 +133,19 @@
 
   "DK": {
     "income_tax": {
-      "name": "Indkomstskat",
-      "year": 2025,
-      "confidence": "low",
-      "brackets": null,
-      "note": "Includes municipal tax (~25%) + state tax (~15%). Combined ~42-57%.",
-      "source": "https://www.skat.dk"
+      "name": "Indkomstskat (bundskat + mellemskat + topskat + toptopskat + kommuneskat)",
+      "year": 2026,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0, "to": 54100, "rate": 0 },
+        { "from": 54100, "to": 641200, "rate": 37.06 },
+        { "from": 641200, "to": 777900, "rate": 44.56 },
+        { "from": 777900, "to": 2592700, "rate": 52.06 },
+        { "from": 2592700, "to": null, "rate": 57.06 }
+      ],
+      "note": "Approximation: national average municipal rate 25.05% (church tax excluded) + bundskat 12.01%; personfradrag DKK 54,100 as a 0% bracket; mellemskat 7.5% > 641,200, topskat 7.5% > 777,900, toptopskat 5% > 2,592,700. Thresholds apply to income after AM-bidrag (8%, in ss). Municipal rate varies 23.39-26.30%.",
+      "source": "https://svmn.dk/tal-og-metode/satser/satser-og-beloebsgraenser-i-lovgivningen/personskatteloven",
+      "checked": "2026-10-12"
     },
     "ss": { "name": "Arbejdsmarkedsbidrag (AM-bidrag)", "mode": "percent", "rate": 8, "source": "https://www.skat.dk" }
   },
@@ -163,12 +183,19 @@
 
   "FI": {
     "income_tax": {
-      "name": "Tulovero",
-      "year": 2025,
-      "confidence": "low",
-      "brackets": null,
-      "note": "State + municipal tax. Combined typically 25-58%.",
-      "source": "https://www.vero.fi"
+      "name": "Valtion tulovero + kunnallisvero",
+      "year": 2026,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0, "to": 22000, "rate": 20.24 },
+        { "from": 22000, "to": 32600, "rate": 26.6 },
+        { "from": 32600, "to": 40100, "rate": 37.85 },
+        { "from": 40100, "to": 52100, "rate": 40.85 },
+        { "from": 52100, "to": null, "rate": 45.1 }
+      ],
+      "note": "Approximation: state scale 2026 (12.64/19/30.25/33.25/37.5%) + average municipal tax 7.60% (church tax excluded). Excludes YLE tax, health insurance contribution and deductions. Municipal rate varies.",
+      "source": "https://www.vero.fi/henkiloasiakkaat/verokortti-ja-veroilmoitus/tulot/ansiotulot/",
+      "checked": "2026-10-12"
     },
     "ss": { "name": "YEL (yrittäjän eläkevakuutus)", "mode": "percent", "rate": 24.4, "note": "2026: single rate for all ages. New entrepreneurs get a 22% discount during their first 4 years.", "source": "https://www.etk.fi/en/finnish-pension-system/financing-and-investments/pension-contributions/self-employed/", "checked": "2026-09-23" }
   },
@@ -189,7 +216,7 @@
       "source": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1419",
       "checked": "2026-09-23"
     },
-    "ss": { "name": "Cotisations sociales", "mode": "percent", "rate": 22, "note": "Auto-entrepreneur BNC rate. Régime réel: ~45%.", "source": "https://www.urssaf.fr" }
+    "ss": { "name": "Cotisations sociales", "mode": "percent", "rate": 25.6, "note": "Micro-entrepreneur, liberal professions (BNC, régime général) from 1 Jan 2026. Cipav 23.2%, BIC services 21.2%, sales 12.3%. Optional versement libératoire: +2.2% BNC, +1.7% BIC services, +1% sales. Checked 2026-10-12.", "source": "https://www.urssaf.fr/accueil/actualites/taux-cotisations-autoentrepeneur.html" }
   },
 
   "GB": {
@@ -229,12 +256,17 @@
   "HR": {
     "income_tax": {
       "name": "Porez na dohodak",
-      "year": 2025,
-      "confidence": "low",
-      "brackets": null,
-      "source": "https://www.porezna-uprava.hr"
+      "year": 2026,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0, "to": 60000, "rate": 20 },
+        { "from": 60000, "to": null, "rate": 30 }
+      ],
+      "note": "Default rates when the municipality adopts none (most of them). Each municipality sets its own within limits: lower 15-23%, higher 25-33% (Zagreb 23% / 33%). Rate follows the taxpayer's residence.",
+      "source": "https://porezna-uprava.gov.hr/hr/porezne-stope-godisnjeg-poreza-na-dohodak/4764",
+      "checked": "2026-10-12"
     },
-    "ss": { "name": "Doprinosi", "mode": "percent", "rate": 16.5, "source": "https://www.porezna-uprava.hr" }
+    "ss": { "name": "Doprinosi", "mode": "percent", "rate": 36.5, "note": "MO I 15% + MO II 5% + health 16.5%, on a fixed monthly base set yearly (2026: obrt on income 1,295.45 EUR, paušal 797.20 EUR), so the real cost is fixed per month. Checked 2026-10-12.", "source": "https://porezna-uprava.gov.hr/hr/obrtnici-pausalisti/4564" }
   },
 
   "HU": {
@@ -299,13 +331,39 @@
 
   "LU": {
     "income_tax": {
-      "name": "Impôt sur le revenu",
+      "name": "Impôt sur le revenu (classe 1)",
       "year": 2025,
-      "confidence": "low",
-      "brackets": null,
-      "source": "https://impotsdirects.public.lu"
+      "confidence": "high",
+      "brackets": [
+        { "from": 0, "to": 13230, "rate": 0 },
+        { "from": 13230, "to": 15435, "rate": 8 },
+        { "from": 15435, "to": 17640, "rate": 9 },
+        { "from": 17640, "to": 19845, "rate": 10 },
+        { "from": 19845, "to": 22050, "rate": 11 },
+        { "from": 22050, "to": 24255, "rate": 12 },
+        { "from": 24255, "to": 26550, "rate": 14 },
+        { "from": 26550, "to": 28845, "rate": 16 },
+        { "from": 28845, "to": 31140, "rate": 18 },
+        { "from": 31140, "to": 33435, "rate": 20 },
+        { "from": 33435, "to": 35730, "rate": 22 },
+        { "from": 35730, "to": 38025, "rate": 24 },
+        { "from": 38025, "to": 40320, "rate": 26 },
+        { "from": 40320, "to": 42615, "rate": 28 },
+        { "from": 42615, "to": 44910, "rate": 30 },
+        { "from": 44910, "to": 47205, "rate": 32 },
+        { "from": 47205, "to": 49500, "rate": 34 },
+        { "from": 49500, "to": 51795, "rate": 36 },
+        { "from": 51795, "to": 54090, "rate": 38 },
+        { "from": 54090, "to": 117450, "rate": 39 },
+        { "from": 117450, "to": 176160, "rate": 40 },
+        { "from": 176160, "to": 234870, "rate": 41 },
+        { "from": 234870, "to": null, "rate": 42 }
+      ],
+      "note": "Base tariff, tax class 1, in force from tax year 2025 (latest adaptation per ACD; no 2026 change published). Employment-fund surcharge and tax credits not included.",
+      "source": "https://impotsdirects.public.lu/fr/az/t/tarif_pers.html",
+      "checked": "2026-10-12"
     },
-    "ss": { "name": "Cotisations sociales", "mode": "percent", "rate": 24.5, "note": "2026: pension 17% + health 5.6% + cash benefits 0.5% + dependency 1.4%.", "source": "https://ccss.public.lu/fr/parametres-sociaux.html", "checked": "2026-09-23" }
+    "ss": { "name": "Cotisations non-salariés", "mode": "percent", "rate": 25.15, "note": "2026: pension 17 + health 5.6 + cash benefits 0.5 + dependency 1.4 + accident 0.65 (0.5525-0.975 by bonus-malus). Base min 2,703.74/month, max 13,518.68/month (not for dependency). Checked 2026-10-12.", "source": "https://ccss.public.lu/dam-assets/publications/2026/ccss-20260313-avis-60-fr-de.pdf" }
   },
 
   "LV": {
@@ -325,13 +383,20 @@
 
   "MT": {
     "income_tax": {
-      "name": "Income Tax",
-      "year": 2025,
-      "confidence": "low",
-      "brackets": null,
-      "source": "https://cfr.gov.mt"
+      "name": "Income Tax (single rates)",
+      "year": 2026,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0, "to": 12000, "rate": 0 },
+        { "from": 12000, "to": 16000, "rate": 15 },
+        { "from": 16000, "to": 60000, "rate": 25 },
+        { "from": 60000, "to": null, "rate": 35 }
+      ],
+      "note": "Single rates, resident individual, 2026. Married and parent rates differ.",
+      "source": "https://mtca.gov.mt/personal-tax/tax-rates/tax-ratesindividuals/2026",
+      "checked": "2026-10-12"
     },
-    "ss": { "name": "Social Security", "mode": "percent", "rate": 10, "source": "https://socialsecurity.gov.mt" }
+    "ss": { "name": "Class 2 Social Security (self-occupied)", "mode": "percent", "rate": 15, "note": "2026: 15% of annual net income between 12,543.73 and 29,083.35 (25,499.99 if born up to 1961); above that a flat 83.89/week (73.56); below, 36.18/week. Full-time farmers 10%. Checked 2026-10-12.", "source": "https://mtca.gov.mt/personal-tax/fss/social-security-contribution-rates/class-2---social-security-contribution-rates/2026" }
   },
 
   "NL": {
@@ -351,12 +416,21 @@
 
   "NO": {
     "income_tax": {
-      "name": "Inntektsskatt",
-      "year": 2025,
-      "confidence": "low",
-      "brackets": null,
-      "note": "Municipal ~22% + bracket tax 1.7-17.6% + trygdeavgift",
-      "source": "https://www.skatteetaten.no"
+      "name": "Skatt på alminnelig inntekt + trinnskatt",
+      "year": 2026,
+      "confidence": "high",
+      "brackets": [
+        { "from": 0, "to": 114540, "rate": 0 },
+        { "from": 114540, "to": 226100, "rate": 22 },
+        { "from": 226100, "to": 318300, "rate": 23.7 },
+        { "from": 318300, "to": 725050, "rate": 26 },
+        { "from": 725050, "to": 980100, "rate": 35.7 },
+        { "from": 980100, "to": 1467200, "rate": 38.8 },
+        { "from": 1467200, "to": null, "rate": 39.8 }
+      ],
+      "note": "22% on general income above the personal allowance NOK 114,540 + bracket tax 1.7/4.0/13.7/16.8/17.8% above 226,100/318,300/725,050/980,100/1,467,200. Excludes trygdeavgift (in ss) and the 18.5% rate in Finnmark/North Troms.",
+      "source": "https://www.skatteetaten.no/en/rettskilder/type/uttalelser/uttalelser/forskuddsutskrivingen-2026/",
+      "checked": "2026-10-12"
     },
     "ss": { "name": "Trygdeavgift", "mode": "percent", "rate": 10.8, "note": "Self-employed business income (naeringsinntekt) rate 2026; the employee rate is 7.6%.", "source": "https://www.skatteetaten.no/en/rates/", "checked": "2026-09-23" }
   },
@@ -373,7 +447,7 @@
       "note": "First 30,000 PLN tax-free (kwota wolna od podatku)",
       "source": "https://www.podatki.gov.pl"
     },
-    "ss": { "name": "ZUS", "mode": "fixed", "rate": null, "note": "Fixed monthly contributions ~1800 PLN (2025). Mały ZUS available for small earners.", "source": "https://www.zus.pl" }
+    "ss": { "name": "ZUS", "mode": "fixed", "rate": 1788.29, "note": "Full ZUS 2026, social contributions per month without voluntary sickness insurance (1,926.76 with it). Health contribution separate: 9% of income (4.9% liniowy), minimum 432.54 PLN/month. Ulga na start: 6 months without social contributions; preferential base for 24 months. Checked 2026-10-12.", "source": "https://www.zus.pl/baza-wiedzy/skladki-wskazniki-odsetki/skladki/wysokosc-skladek-na-ubezpieczenia-spoleczne" }
   },
 
   "PT": {
@@ -452,7 +526,7 @@
       "source": "https://www.fu.gov.si/fileadmin/Internet/Davki_in_druge_dajatve/Podrocja/Dohodnina/Letna_odmera_dohodnine/Opis/Lestvica_za_leto_2026.docx",
       "checked": "2026-09-23"
     },
-    "ss": { "name": "Prispevki za socialno varnost", "mode": "percent", "rate": 38.2, "source": "https://www.fu.gov.si" }
+    "ss": { "name": "Prispevki za socialno varnost (s.p.)", "mode": "percent", "rate": 40.2, "note": "2026: employee + employer shares (pension 24.35, health 12.92, long-term care 2.00, parental 0.20, employment 0.20, injury 0.53) plus fixed health contribution (OZP) 39.36 EUR/month (Mar 2026-Feb 2027). Checked 2026-10-12.", "source": "https://spot.gov.si/sl/teme/prispevki-za-socialno-varnost" }
   },
 
   "SK": {
@@ -629,17 +703,19 @@
 
   "AU": {
     "income_tax": {
-      "name": "Income Tax",
-      "year": 2025,
+      "name": "Income Tax (residents)",
+      "year": 2026,
       "confidence": "high",
       "brackets": [
-        { "from": 0,      "to": 18200,  "rate": 0    },
-        { "from": 18200,  "to": 45000,  "rate": 19   },
-        { "from": 45000,  "to": 135000, "rate": 32.5 },
-        { "from": 135000, "to": 190000, "rate": 37   },
-        { "from": 190000, "to": null,   "rate": 45   }
+        { "from": 0, "to": 18200, "rate": 0 },
+        { "from": 18200, "to": 45000, "rate": 15 },
+        { "from": 45000, "to": 135000, "rate": 30 },
+        { "from": 135000, "to": 190000, "rate": 37 },
+        { "from": 190000, "to": null, "rate": 45 }
       ],
-      "source": "https://www.ato.gov.au"
+      "note": "Resident rates for the 2026-27 income year (1 Jul 2026 - 30 Jun 2027); 2025-26 was 16% instead of 15%. Medicare levy 2% in ss.",
+      "source": "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents",
+      "checked": "2026-10-12"
     },
     "ss": { "name": "Medicare levy", "mode": "percent", "rate": 2, "source": "https://www.ato.gov.au" }
   },
